@@ -1,0 +1,31 @@
+!!!
+%html
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
+    %title= data.page.title || "The Middleman"
+    = stylesheet_link_tag "github"
+    = stylesheet_link_tag "all"
+  %body{:class => page_classes}
+    .reveal
+      .state-background
+        .slides
+          = yield
+        %aside.controls
+          %a.left(href='#') &#x25C4;
+          %a.right(href="#") &#x25BA;
+          %a.up(href="#") &#x25B2;
+          %a.down(href="#") &#x25BC;
+        .progress
+          %span
+
+    = javascript_include_tag  "head.min.js"
+    = javascript_include_tag  "jquery.min.js"
+    = javascript_include_tag  "reveal.min.js"
+    = javascript_include_tag  "ace"
+    = javascript_include_tag  "mode-coffee"
+    = javascript_include_tag  "theme-textmate"
+    = javascript_include_tag  "coffee-script"
+    = javascript_include_tag  "highlight.pack"
+    = javascript_include_tag  "all.js"
+
