@@ -17,12 +17,13 @@ Das Treffen findet (wie üblich in der SLUB) im Raum 0.47 statt. Hier ist die 3D
 
 ## Show Notes
 
-* [http://coffeescript.org/]()
-* [http://coffeescriptcookbook.com]()
+* [http://coffeescript.org/](Coffescript Projektseite)
+* [http://coffeescriptcookbook.com](Cookbook)
 
 Alternativen:
 
 * Typescript
 * Dart
+* LispyScript
 
 
