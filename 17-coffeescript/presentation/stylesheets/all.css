@@ -1,5 +1,5 @@
 @import url(reveal.css);
-@import url(sky.css);
+@import url(beige.css);
 /* line 5, all.css.sass */
 .editor-content {
   position: absolute;
@@ -65,3 +65,28 @@ pre.editor-console {
     /* line 61, all.css.sass */
     pre.editor-console .return:before {
       content: "=> "; }
+
+/* line 63, all.css.sass */
+pre.code {
+  background-color: rgba(0, 0, 0, 0.05);
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  padding: 10px 10px;
+  border-radius: 10px;
+  overflow: auto;
+  word-wrap: break-word; }
+
+/* line 70, all.css.sass */
+h1.title {
+  font-weight: bold;
+  position: absolute;
+  top: 30%;
+  left: 25%; }
+
+/* line 75, all.css.sass */
+.ace-tm .ace_line .ace_comment {
+  color: #eeffee !important; }
+
+/* line 79, all.css.sass */
+#intro img {
+  border: 0;
+  box-shadow: none; }

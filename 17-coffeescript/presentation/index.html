@@ -3,7 +3,7 @@
   <head>
     <meta charset='utf-8' />
     <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible' />
-    <title>The Middleman</title>
+    <title>Coffeescript - WDCM Dresden</title>
     <link href="stylesheets/github.css" media="screen" rel="stylesheet" type="text/css" />
     <link href="stylesheets/all.css" media="screen" rel="stylesheet" type="text/css" />
   </head>
@@ -11,47 +11,77 @@
     <div class='reveal'>
       <div class='state-background'>
         <div class='slides'>
-          <section>
+          <section id='intro'>
   <img src="images/logo.png" />
   <h3>Javascript "Transpiler"</h3>
-  WDCM Dresden, 9th Nov
-</section>
-<section>
-  <iframe width="800" height="600" src="http://www.youtube.com/embed/_yZHbh396rc?feature=player_detailpage#t=82s" frameborder="0" allowfullscreen></iframe></iframe>
-</section>
-<section>
-  <img src="images/javascript_good_and_bad_parts.jpg" />
-</section>
-<section>
-  <div class='fragment'><img src="images/to2.png" /></div>
-  <script type="text/javascript" src="http://www.google.com/trends/embed.js?hl=de&q=coffeescript,+rails+3.1&cmpt=q&content=1&cid=TIMESERIES_GRAPH_0&export=5&w=500&h=330"></script></script>
+  <p>
+    <img src="http://wdcmdresden.com/wp-content/themes/twentytwelve-child/img/wdcm.png" />
+    <br />
+    09.11.2012
+  </p>
 </section>
 <section>
   <section>
-    <h2>Syntax</h2>
+    <blockquote>
+      A little language that compiles into JavaScript
+    </blockquote>
+    Jeremy Ashkenas (CoffeeScript + Backbone.js)
+  </section>
+  <section>
+    <iframe width="800" height="600" src="http://www.youtube.com/embed/_yZHbh396rc?feature=player_detailpage#t=82s" frameborder="0" allowfullscreen></iframe></iframe>
+  </section>
+  <section>
+    <img src="images/javascript_good_and_bad_parts.jpg" />
+  </section>
+  <section>
+    <div class='fragment'><img src="images/to2.png" /></div>
+    <script type="text/javascript" src="http://www.google.com/trends/embed.js?hl=de&q=coffeescript,+rails+3.1&cmpt=q&content=1&cid=TIMESERIES_GRAPH_0&export=5&w=500&h=330"></script></script>
+  </section>
+</section>
+<section>
+  <section>
+    <h1 class='title'>Syntax</h1>
+    Hybrid aus Ruby und Python
+  </section>
+  <section>
+    <ul>
+      <li>keine ;</li>
+      <li>keine {...}</li>
+      <li>wenig Klammern</li>
+      <li>Whitespace signifikant</li>
+    </ul>
   </section>
   <section>
     <h2>Literale / Strukturen</h2>
     <div class='editor-content'>
-      a = 2&#x000A;&#x000A;# if a? and a == 2&#x000A;#   console.log "a is 2"&#x000A;# else&#x000A;#   console.log "it's not"
+      a = 2&#x000A;&#x000A;#if a? and a == 2&#x000A;#  console.log "a is 2"&#x000A;#else&#x000A;#  console.log "it's not"
+    </div>
+    <aside class='notes'>
+      einfuehrung in Editor. Literale, Rueckgabewerte, Scoping
+    </aside>
+  </section>
+  <section>
+    <h2>Rückgabewerte</h2>
+    <div class='editor-content'>
+      calculate = ->&#x000A;  # do something&#x000A;  12 + 14&#x000A;&#x000A;calculate()
     </div>
   </section>
   <section>
     <h2>Objekte / Funktionen</h2>
     <div class='editor-content'>
-      math = &#x000A;  PI: 3.1415926&#x000A;  square: (x) ->&#x000A;    return x * x&#x000A;  # circleUmfang: (radius) ->&#x000A;&#x000A;math.square 4&#x000A;
+      math = &#x000A;  PI: 3.1415926&#x000A;  #square: (x) ->&#x000A;  #  return x * x&#x000A;  #circleUmfang: (radius) ->&#x000A;  #  return this.PI * this.square(radius)&#x000A;&#x000A;#math.square 4&#x000A;#math.circleUmfang(2)&#x000A;
     </div>
   </section>
   <section>
     <h2>Klassen</h2>
     <div class='editor-content'>
-      class User&#x000A;  constructor: (name) ->&#x000A;    this.name = name&#x000A;    &#x000A;  greet: -> &#x000A;    return "Hello " + this.name&#x000A;    &#x000A;# user = new User("stefan")&#x000A;# user.greet()&#x000A;
+      class User&#x000A;  constructor: (name) ->&#x000A;    this.name = name&#x000A;    &#x000A;  #greet: -> &#x000A;  #  return "Hello " + this.name&#x000A;    &#x000A;#user = new User("stefan")&#x000A;#user.greet()&#x000A;&#x000A;#class Admin extends User&#x000A;#  greet: ->&#x000A;#    super + " and you are Admin!"&#x000A;#admin = new Admin("stefan")&#x000A;#admin.greet()&#x000A;&#x000A;&#x000A;
     </div>
   </section>
   <section>
     <h2>jQuery &amp; co</h2>
     <div class='editor-content'>
-      jQuery ->&#x000A;  #
+      #links = []&#x000A;jQuery -> &#x000A;#  $('a').each ->&#x000A;#    if a = $(@).attr("href")&#x000A;#      links.push a&#x000A;#  links&#x000A;#links  &#x000A;&#x000A;#$.ajax&#x000A;#   url: 'http://api.twitter.com/1/statuses/user_timeline.json'&#x000A;#   type: 'GET'&#x000A;#   dataType: 'jsonp'&#x000A;#   data:&#x000A;#     screen_name: "wdcmdresden"&#x000A;#     count: 2&#x000A;#   success: (data, textStatus, xhr)->&#x000A;#     for tweet in data&#x000A;#       alert(tweet.text)&#x000A;
     </div>
   </section>
   <section>
@@ -61,25 +91,15 @@
     </div>
   </section>
   <section>
-    <h2>Rückgabewerte</h2>
+    <h3>Ranges/Comparisons</h3>
     <div class='editor-content'>
-      calculate = ->&#x000A;  # do something&#x000A;  12 + 14&#x000A;&#x000A;calculate()
+      if 2 < a < 5&#x000A;  console.log "#{a} is in range"&#x000A;#if a in [2..5]&#x000A;#  console.log "#{a} is in range"
     </div>
   </section>
   <section>
-    <div class='fragment'>
-      <h3>Chainable Comparison</h3>
-    </div>
+    <h3>Expressions everywhere</h3>
     <div class='editor-content'>
-      = "if 2 < a < 5"&#x000A;= "  a in range (2,5)"
-    </div>
-  </section>
-  <section>
-    <div class='fragment'>
-      <h3>Expressions everywhere</h3>
-    </div>
-    <div class='editor-content'>
-      value = if a?&#x000A;  42&#x000A;else&#x000A;  23&#x000A;&#x000A;  &#x000A;
+      value = if a?&#x000A;  42&#x000A;else&#x000A;  23&#x000A;&#x000A;# sum=0&#x000A;# result = sum+=x for x in [0..100]&#x000A;&#x000A;# arr = for x in [1..25]&#x000A;#   x * x&#x000A;&#x000A;  &#x000A;
     </div>
   </section>
 </section>
@@ -88,38 +108,37 @@
     <h2>Tool-Support</h2>
   </section>
   <section>
-    <h3>Als Javascript (Spielen)</h3>
-    <pre class='hightlight html'><script type="text/coffeescript">&#x000A;jQuery ->&#x000A;  if coffeescript.isAwesome?&#x000A;    console.log "Yeah"&#x000A;</script>&#x000A;<script src="http://coffeescript.org/extras/coffee-script.js"></script></pre>
-    <section>
-      <h3>binary</h3>
-      Installation z.B. mit npm:
-      <pre>npm install -g coffee-script</pre>
-      Binary kompiliert Coffeescript:
-      <pre>coffee input.coffee output.js
-      coffee watch</pre>
-    </section>
-    <section>
-      <h3>Automatisch</h3>
-      <ul>
-        <li>Yeoman</li>
-        <li>Middleman</li>
-        <li>Guard-coffee</li>
-        <li>LiveReload, CodeKit</li>
-      </ul>
-    </section>
-    <section>
-      <h3>Webframeworks</h3>
-      <ul>
-        <li>Rails 3.1+ Asset pipeline</li>
-        <li>Sinatra, Django, Drupal, Symfony2,...</li>
-      </ul>
-    </section>
-    <section>
-      <h3>Editor</h3>
-      <ul>
-        <li>vim, eclipse, sublime, netbeans,...</li>
-      </ul>
-    </section>
+    <h3>Als Javascript (zum Spielen)</h3>
+    <pre class='code'>&lt;script type="text/coffeescript">&#x000A;jQuery ->&#x000A;  if coffeescript.isAwesome?&#x000A;    console.log "Yeah"&#x000A;&lt;/script>&#x000A;&lt;script src="http://coffeescript.org/extras/coffee-script.js"></script></pre>
+  </section>
+  <section>
+    <h3>binary</h3>
+    Installation z.B. mit npm:
+    <pre class='code'>npm install -g coffee-script</pre>
+    Nutzen des 'coffee' Programms
+    <pre class='code'>coffee input.coffee output.js&#x000A;coffee watch</pre>
+  </section>
+  <section>
+    <h3>Automatisch</h3>
+    <ul>
+      <li>Yeoman</li>
+      <li>Middleman</li>
+      <li>Guard-coffee</li>
+      <li>LiveReload, CodeKit</li>
+    </ul>
+  </section>
+  <section>
+    <h3>Webframeworks</h3>
+    <ul>
+      <li>Rails 3.1+ Asset pipeline</li>
+      <li>Sinatra, Django, Drupal, Symfony2,...</li>
+    </ul>
+  </section>
+  <section>
+    <h3>Editor</h3>
+    <ul>
+      <li>vim, eclipse, sublime, netbeans,...</li>
+    </ul>
   </section>
 </section>
 <section>
@@ -145,6 +164,13 @@
     </blockquote>
     https://tech.dropbox.com/?p=361
   </section>
+  <section>
+    <ul>
+      <li>Lesbarer</li>
+      <li>spaßiger</li>
+      <li>basiert auf Best Practices</li>
+    </ul>
+  </section>
 </section>
 <section>
   <section>
@@ -155,7 +181,8 @@
     <h3>Komplexerer Build-Prozess</h3>
     <div class='fragment'>
       Abhilfe schafft
-      <code>coffee watch</code>
+      <pre class='code'>coffee watch</pre>
+      oder guard-coffeescript
     </div>
   </section>
   <section>
@@ -168,19 +195,22 @@
   </section>
   <section>
     <h3>Alternativen</h3>
-    <ul>
-      <li>
-        Typescript
-        <i>Microsoft</i>
-        <div class='fragment'>
-          "Enterprisey"
-        </div>
-      </li>
-      <li>
-        Dart
-        <i>Google</i>
-      </li>
-    </ul>
+    <h4>
+      Typescript
+      <i>Microsoft</i>
+    </h4>
+    <pre class='code'>class Admin {&#x000A; ...&#x000A;}&#x000A;interface Person {&#x000A;    firstname: string;&#x000A;    lastname: string;&#x000A;}&#x000A;function greet(variable: Person) {...}</pre>
+  </section>
+  <section>
+    <h4>
+      Dart2Js
+      <i>Google</i>
+    </h4>
+    <pre class='code'>class HelloDartTest {&#x000A;  static testMain() {&#x000A;    print("Hello, Darter!");&#x000A;  }&#x000A;}&#x000A;main() {&#x000A;  HelloDartTest.testMain();&#x000A;}</pre>
+  </section>
+  <section>
+    <h4>LispyScript</h4>
+    <pre class='code'>(var square (function (x) (* x x))) &#x000A;(console.log (square 10))&#x000A;</pre>
   </section>
 </section>
 <section>
@@ -188,12 +218,11 @@
     <h2>Ressourcen</h2>
   </section>
   <section>
-    <a href="#">http://coffeescript.org/</a>
-    <iframe height='600' src='http://coffeescript.org/' width='990'></iframe>
-  </section>
-  <section>
-    <a href="#">http://coffeescriptcookbook.com</a>
-    <iframe height='600' src='http://coffeescriptcookbook.com/' width='990'></iframe>
+    <ul>
+      <li><a href="http://coffeescript.org/">CoffeeScript Doku</a></li>
+      <li><a href="http://coffeescriptcookbook.com">CoffeeScript Cookbook</a></li>
+      <li><a href="http://www.youtube.com/watch?v=aER4_AP3S4E">[Youtube] CoffeeScript for the Rubyist by Mark Bates</a></li>
+    </ul>
   </section>
 </section>
 <section>

@@ -1,10 +1,12 @@
 (function() {
   var CoffeeCompileEditor;
 
-  jQuery(function() {
-    return $('.editor-content').each(function() {
-      return new CoffeeCompileEditor(this);
-    });
+  Reveal.addEventListener('slidechanged', function(event) {
+    var el;
+    el = $(event.currentSlide);
+    if (!(el.find(".ace_editor").length > 0)) {
+      return new CoffeeCompileEditor(el.find(".editor-content")[0]);
+    }
   });
 
   CoffeeCompileEditor = (function() {
@@ -15,6 +17,7 @@
     function CoffeeCompileEditor(editor) {
       var p;
       this.editor = editor;
+      this.editor.ace = this;
       p = $(this.editor).parent();
       p.append($("<div class='editor'/>"));
       p.append($("<pre class='editor-jsbuffer'/>"));
@@ -33,6 +36,7 @@
       this.editor.innerHTML = "";
       content = content.replace(/(^\s+|\s+$)/g, "");
       content = content.replace(/&gt;/g, ">");
+      content = content.replace(/&lt;/g, "<");
       editor = ace.edit(this.editor);
       this.ace = editor;
       session = editor.getSession();
@@ -40,6 +44,7 @@
       editor.setTheme("ace/theme/textmate");
       session.setUseSoftTabs(true);
       session.setTabSize(2);
+      ref.updateEditor();
       setTimeout(function() {
         editor.getSession().setValue(content);
         return editor.focus();
@@ -70,6 +75,7 @@
         this.js.html(compiled);
         return hljs.highlightBlock(this.js[0], null, false);
       } catch (error) {
+        console.log(error);
         return error;
       }
     };
