@@ -13,12 +13,12 @@ Mittlerweile ist CoffeeScript schon soweit bekannt, dass es in den neueren Ruby 
 Das Treffen findet (wie üblich in der SLUB) im Raum 0.47 statt. Hier ist die 3D-Ansicht der Räume im Erdgeschoss, damit ihr wisst, wo ihr hinmüsst. Vergesst bitte nicht, eure Rucksäcke/Taschen in den Schließfächern einzusperren. Essen und Trinken ist leider nicht erlaubt.
 
 
-[http://wdcmdresden.github.com/treffen/17-coffeescript/presentation/#/](Präsentation)
+[Präsentation](http://wdcmdresden.github.com/treffen/17-coffeescript/presentation/)
 
 ## Show Notes
 
-* [http://coffeescript.org/](Coffescript Projektseite)
-* [http://coffeescriptcookbook.com](Cookbook)
+* [CoffeeScript Projektseite](http://coffeescript.org/)
+* [Cookbook](http://coffeescriptcookbook.com)
 
 Alternativen:
 
