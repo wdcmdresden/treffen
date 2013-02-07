@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>ProcessWire – Open Source CMS mit Custom Fields & API</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<h1>ProcessWire</h1>
+					<h3>Open Source CMS mit Custom Fields & API</h3>
+					<p>
+						<small>WDCM Dresden, 7. Februar 2013</small>
+					</p>
+				</section>
+
+				<section>
+					<blockquote>@<a href="https://twitter.com/processwire">processwire</a> is just incredible. I've never used a CMS that just made sense to a front-end developer. &mdash; Phil Diaz (@thephildiaz) <a href="https://twitter.com/thephildiaz/status/295953230314217473">28. Januar 2013</a></blockquote>
+				</section>
+
+				<section>
+					<p><a href="http://webkrauts.de/artikel/2012/processwire"><img src="img/spoiler.png" alt="Screenshot Webkrauts-Artikel"></a></p>
+				</section>
+
+				<section>
+					<h2>Allgemeine Infos</h2>
+					<ul>
+						<li>Hauptentwickler: <a href="http://www.ryancramer.com/">Ryan Cramer</a></li>
+						<li>erstmals 2007 erschienen</li>
+						<li>(seit Version 2) open source</li>
+						<li>PHP 5.2.4+, MySQL 5.0.15+</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Features</h2>
+					<ul>
+						<li>einfache, jQuery-artige API</li>
+						<li>modulare Pluginarchitektur</li>
+						<li>»Seiten« zentrales Konzept</li>
+						<li>extrem flexibel und an eigene Wünsche anpassbar</li>
+						<li>integrierte Benutzerverwaltung</li>
+						<li>aktive Community</li>
+					</ul>
+				</section>
+
+				<section>
+					<blockquote>Reading around the @<a href="https://twitter.com/processwire">processwire</a> forums. It's funny people ask: "Is it possible to -?" and then Ryan says "You just have to..." I ♥ PW &mdash; Nicole Bardales (@NicoleBardales) <a href="https://twitter.com/NicoleBardales/status/288198464318349312">7. Januar 2013</a></blockquote>
+				</section>
+
+				<section>
+					<h2>Puristischer, feingranularer Ansatz</h2>
+					<ul>
+						<li>kaum Standardfelder, keine vorgegebenen Inhaltstypen</li>
+						<li>Eingabemöglichkeiten richten sich nach dem ausgewählten Template</li>
+						<li>
+							ausgeklügeltes Template-Management, extrem anpassbar
+							<ul>
+								<li>Felder können in jedem Template individuell angeordnet, umbenannt, mit template-spezifischen Hilfstexten versehen und auf verschiedene Tabs aufgeteilt werden</li>
+							</ul>
+						</li>
+
+					</ul>
+				</section>
+
+				<section>
+					<h2>Intelligente Eingabe-Interfaces von Feldtypen</h2>
+					<ul>
+						<li>Drag ’n’ Drop</li>
+						<li>Multiupload sowie Beschriften und Sortieren der Uploads</li>
+						<li>ZIP-Datei hochladen und automatisch enthaltene Dateien einfügen lassen</li>
+						<li>Thumbnail-Unterstützung durch Erweiterungsmodul nachrüstbar</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Seite, Seiten, Seiten</h2>
+					<p><img src="img/seitenbaum.png" alt="Screenshot Seitenbaum"></p>
+
+				</section>
+
+				<section>
+					<ul>
+						<li>Seiten nicht nur für typische Inhaltsseiten verwendet</li>
+						<li>
+							versteckte Seiten dienen als »Datenbankeingabemasken«
+							<ul>
+								<li>Pflegeoberfläche für beliebige Inhalte (= awesomeness)</li>
+							</ul>
+						</li>
+					</ul>
+
+				</section>
+
+				<section>
+					<h2>Beispiel: Taxonomien</h2>
+					<ul>
+						<li>PW kennt kein separates Taxonomie-System (wie z.B. Kategorien/Tags bei WordPress)</li>
+						<li>trotzdem lassen sich beliebig komplexe Taxonomien in ProcessWire erstellen</li>
+						<li>Zuweisung der Taxonomie-Begriffe durch Seiten-Referenzfelder</li>
+						<li>
+							neue Taxonomiebegriffe (= neue Seiten) werden direkt aus dem Referenzfeld heraus erstellt
+							<ul>
+								<li>bequem per autocomplete</li>
+								<li>neue Seiten werden automatisch im Hintergrund erstellt und an die zuvor definierte Stelle im Seitenbaum gehängt</li>
+							</ul>
+						</li>
+
+					</ul>
+
+				</section>
+
+				<section>
+					<h2>Beispiel: Taxonomien</h2>
+					<p><img src="img/taxonomien.jpeg" alt="Screenshot Taxonomien"></p>
+				</section>
+
+				<section>
+					<h2>Vorteile</h2>
+					<ul>
+						<li>separater Taxonomie-Begriff-Manager überflüssig</li>
+						<li>alle Taxonomie-Seiten können mit beliebigen Feldern zur Eingabe von Zusatzinformationen versehen werden (z.B. Beschreibungen, Bilder, interne Steuerinformationen, …)</li>
+						<li>
+							keine zusätzlichen Funktionen für Umgang mit Taxonomie notwendig
+							<ul>
+								<li>Entwickler, der weiß, wie in Template-Datei Seiten nach bestimmten Kriterien selektiert und Seiteninhalte ausgegeben werden, kann automatisch auch mit jedem beliebigen Taxonomie-System umgehen</li>
+							</ul>
+						</li>
+					</ul>
+
+				</section>
+
+				<section>
+					<h2>Fazit: Testen lohnt sich!</h2>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
