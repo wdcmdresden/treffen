@@ -1,16 +1,18 @@
 # Treffen
 
-Repos of some of the presentations hold on WDCM's meetings.
+Präsentationen vergangener Treffen.
 
 
-## No.20: CMS-Showdown
+## #20: CMS-Showdown
 
-* [Drupal](http://wdcmdresden.github.com/treffen/20-cms/drupal)
+* [Drupal](http://wdcmdresden.github.com/treffen/20-cms-showdown/drupal)
+* [Kirby](http://wdcmdresden.github.com/treffen/20-cms-showdown/kirby)
+* [ProcessWire](http://wdcmdresden.github.com/treffen/20-cms-showdown/provesswire)
 
-## No.18: Feeds
+## #18: Feeds
 
 * [http://wdcmdresden.github.com/treffen/18-feeds](http://wdcmdresden.github.com/treffen/18-feeds)
 
-## No.17: CoffeeScript
+## #17: CoffeeScript
 
 * [http://wdcmdresden.github.com/treffen/17-coffeescript/](http://wdcmdresden.github.com/treffen/17-coffeescript/)
