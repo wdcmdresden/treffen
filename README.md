@@ -7,7 +7,7 @@ Präsentationen vergangener Treffen.
 
 * [Drupal](http://wdcmdresden.github.com/treffen/20-cms-showdown/drupal)
 * [Kirby](http://wdcmdresden.github.com/treffen/20-cms-showdown/kirby)
-* [ProcessWire](http://wdcmdresden.github.com/treffen/20-cms-showdown/provesswire)
+* [ProcessWire](http://wdcmdresden.github.com/treffen/20-cms-showdown/processwire)
 
 ## #18: Feeds
 
