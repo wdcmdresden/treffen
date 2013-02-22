@@ -1,0 +1,98 @@
+@font-face {
+	font-family:Vegur;
+	src:url(../fonts/vegur-regular-webfont.eot);
+	src:url(../fonts/vegur-regular-webfont.eot?#iefix) format("embedded-opentype"),
+		url(../fonts/vegur-regular-webfont.woff) format("woff"),
+		url(../fonts/vegur-regular-webfont.ttf) format("truetype"),
+		url(../fonts/vegur-regular-webfont.svg) format("svg");
+}
+
+* {
+	font-family:Vegur;
+	font-weight:normal;
+	color:#666;
+}
+
+h1 {
+	font-size:300%;
+}
+h2 {
+	font-size:200%;
+}
+p, li {
+	font-size:200%;
+}
+
+
+.slide {
+	overflow:hidden;
+}
+
+header {
+	margin:-20px -20px 4em -20px;
+	padding:2em;
+	overflow:hidden;
+	background:#eee;
+	border-bottom:.1em solid #ccc;
+	box-shadow:0 1em 1em #ddd;
+}
+header hgroup {
+	float:left;
+	padding-left:80px;
+	background:url(../img/Contao_klein.png) no-repeat;
+}
+header hgroup h1 {
+	color:#444;
+}
+header .pageCount {
+	float:right;
+	font-size:150%;
+}
+header .pageCount span.page {
+	color:#d9720c;
+}
+
+article {
+	padding:1em;
+}
+article h1 {
+	margin-bottom:1em;
+	font-size:300%;
+}
+article ul,
+article ol {
+	margin-left:4em;
+}
+article p,
+article ul,
+article ol {
+	margin-bottom:1em;
+}
+article li {
+	margin-bottom:.5em;
+}
+article li ul {
+	margin:.5em 0 0 2em;
+}
+article ul li ul li,
+article ol li ol li {
+	font-size:100%;
+}
+article a {
+	color:#d9720c;
+}
+
+footer {
+	position:absolute;
+	bottom:0;
+	left:0;
+	width:100%;
+	padding:1em;
+	background:#eee;
+	border-top:.1em solid #ccc;
+}
+footer p {
+	width:95%;
+	font-size:150%;
+	text-align:right;
+}

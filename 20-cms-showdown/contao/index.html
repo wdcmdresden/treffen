@@ -1,0 +1,627 @@
+<!doctype html>
+<html>
+	<head>
+		<meta name="viewport" content="width=1200">
+		<title>Contao - Ein Einstieg</title>
+		<link href="res/lib/fathom.css" rel="stylesheet" type="text/css">
+		<link href="res/lib/presentation.css" rel="stylesheet" type="text/css">
+		<script src="res/lib/jquery.min.js"></script>
+		<script src="res/lib/fathom.min.js"></script>
+		<script src="res/lib/jquery.fullscreen-min.js"></script>
+		<script>
+		$(document).ready(function(){
+			$('#presentation').fathom();
+			
+			if ($.support.fullscreen) {
+				$('.fullScreen').click(function(e){
+					$('.fullScreen').fullScreen();
+				});
+			}
+		});
+		</script>
+	</head>
+	<body>
+	
+		<div id="presentation">
+			<div class="slide">
+				<header>
+					<hgroup>
+						<h1>Contao</h1>
+						<h2>Einleitung</h2>
+					</hgroup>
+					<p class="pageCount"><span class="page">1</span> von <span class="page">28</span></p>
+				</header>
+				
+				<article>
+					<h1>Contao - Eine kurze Übersicht</h1>
+					<img src="res/img/Contao_gross.png" alt="Contao" style="display:block; width:781px; margin:0 auto">
+				</article>
+			</div>
+			<div class="slide">
+				<header>
+					<hgroup>
+						<h1>Contao</h1>
+						<h2>Einleitung</h2>
+					</hgroup>
+					<p class="pageCount"><span class="page">2</span> von <span class="page">28</span></p>
+				</header>
+				
+				<article>
+					<h1>Contao - Eine kurze Übersicht</h1>
+					<ol>
+						<li>Überblick</li>
+						<li>Was zeichnet Contao aus?</li>
+						<li>Core-Funktionen</li>
+						<li>Erweiterungen</li>
+						<li>Contao aus der Frontendsicht</li>
+						<li>Stärken</li>
+						<li>Schwächen</li>
+					</ol>
+				</article>
+			</div>
+			<div class="slide">
+				<header>
+					<hgroup>
+						<h1>Contao</h1>
+						<h2>1. Überblick</h2>
+					</hgroup>
+					<p class="pageCount"><span class="page">3</span> von <span class="page">28</span></p>
+				</header>
+				
+				<article>
+					<h1>1. Überblick</h1>
+					<ul>
+						<li>erster Release: 2006</li>
+						<li>seit 2.9.0 Contao, vorher TYPOlight</li>
+						<li>aktueller Stand: Contao 2.11.x und Contao 3.0.x</li>
+						<li>benötigt PHP (>= 5.2) und Datenbank (gewöhnlich MySQL)
+						<li>Projektseite: <a href="http://contao.org" target="_blank">contao.org</a></li>
+						<li>Forum: <a href="http://community.contao.org" target="_blank">community.contao.org</a></li>
+						<li><span style="color:red;">relativ neu:</span> kommerzielle Themes: <a href="http://themes.contao.org" target="_blank">themes.contao.org</a></li>
+					</ul>
+				</article>
+				
+				<footer>
+					<p>Quelle: contao.org</p>
+				</footer>
+			</div>
+			<div class="slide">
+				<header>
+					<hgroup>
+						<h1>Contao</h1>
+						<h2>1. Überblick</h2>
+					</hgroup>
+					<p class="pageCount"><span class="page">4</span> von <span class="page">28</span></p>
+				</header>
+				<article>
+					<h1>1. Überblick</h1>
+					<ul>
+						<li>Hauptentwickler: Leo Feyer</li>
+						<li>Zuarbeit durch 7 Teammitglieder</li>
+						<li>
+							verschiedene Arbeitsgruppen rund um das Hauptteam:
+							<ul>
+								<li>Barrierefreiheit</li>
+								<li>Extension Repository</li>
+							</ul>
+						</li>
+					</ul>
+				</article>
+				
+				<footer>
+					<p>Quelle: contao.org</p>
+				</footer>
+			</div>
+			<div class="slide">
+				<header>
+					<hgroup>
+						<h1>Contao</h1>
+						<h2>1. Überblick</h2>
+					</hgroup>
+					<p class="pageCount"><span class="page">5</span> von <span class="page">28</span></p>
+				</header>
+				<article>
+					<h1>1. Überblick</h1>
+					<ul>
+						<li>
+							Contao Assocation:
+							<ul>
+								<li>Verein, um Contao erfolgreich weiterzuentwickeln</li>
+								<li>
+									Ziele:
+									<ul>
+										<li>Finanzierung der Weiterentwicklung von Contao</li>
+										<li>Contao in den Medien</li>
+										<li>Organisation von Events</li>
+										<li>schnelle Gewinnung einer soliden Mitgliederbasis</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</article>
+				
+				<footer>
+					<p>Quelle: association.contao.org</p>
+				</footer>
+			</div>
+			
+			<div class="slide">
+				<header>
+					<hgroup>
+						<h1>Contao</h1>
+						<h2>2. Was zeichnet Contao aus?</h2>
+					</hgroup>
+					<p class="pageCount"><span class="page">6</span> von <span class="page">28</span></p>
+				</header>
+				<article>
+					<h1>2. Was zeichnet Contao aus?</h1>
+					<ul>
+						<li>Seitenbasiertes CMS</li>
+						<li>strikte Trennung von BE und FE</li>
+						<li>regelmäßiger Updatezyklus</li>
+						<li>alle 2 Jahre eine Version mit Long Term Support</li>
+						<li>hohe Flexibilität bei den Inhalten (später mehr)</li>
+						<li>viele Module bereits im Core enthalten</li>
+						<li>momentan mehr als 1.300 Erweiterungen</li>
+					</ul>
+				</article>
+			</div>
+			
+			<div class="slide">
+				<header>
+					<hgroup>
+						<h1>Contao</h1>
+						<h2>2. Was zeichnet Contao aus?</h2>
+					</hgroup>
+					<p class="pageCount"><span class="page">7</span> von <span class="page">28</span></p>
+				</header>
+				<article>
+					<h1>2. Was zeichnet Contao aus?</h1>
+					<ul>
+						<li>Barrierearmut (genügt W3C/ WAI-Anforderungen, Quelle: contao.org)</li>
+						<li>HTML5- oder XHTML-Doctype auswählbar</li>
+						<li>Templates (später mehr)</li>
+						<li>dadurch sehr updatesicher</li>
+						<li>umfangreiche Themeverwaltung (später mehr)</li>
+						<li>mootools (seit Beginn an) oder jQuery (seit 3.0) einsetzbar</li>
+						<li>Unterstützung von Mehrsprachigkeit</li>
+						<li>Multi-Domainfähig</li>
+					</ul>
+				</article>
+			</div>
+			
+			<div class="slide">
+				<header>
+					<hgroup>
+						<h1>Contao</h1>
+						<h2>3. Core-Funktionen</h2>
+					</hgroup>
+					<p class="pageCount"><span class="page">8</span> von <span class="page">28</span></p>
+				</header>
+				<article>
+					<h1>3. Core-Funktionen - Erweiterte Editierfunktionen</h1>
+					<img src="res/img/site-structure.png" alt="Editierfunktionen" class="fullScreen" style="display:block; width:auto; height:25em;">
+				</article>
+			</div>
+			
+			<div class="slide">
+				<header>
+					<hgroup>
+						<h1>Contao</h1>
+						<h2>3. Core-Funktionen</h2>
+					</hgroup>
+					<p class="pageCount"><span class="page">9</span> von <span class="page">28</span></p>
+				</header>
+				<article>
+					<h1>3. Core-Funktionen - Zentrale Seitenstruktur</h1>
+					<img src="res/img/site-structure-2.png" alt="Seitenstruktur" class="fullScreen" style="display:block; width:auto; height:25em;">
+				</article>
+			</div>
+			
+			<div class="slide">
+				<header>
+					<hgroup>
+						<h1>Contao</h1>
+						<h2>3. Core-Funktionen</h2>
+					</hgroup>
+					<p class="pageCount"><span class="page">10</span> von <span class="page">28</span></p>
+				</header>
+				<article>
+					<h1>3. Core-Funktionen - Benutzerverwaltung</h1>
+					<ul>
+						<li>Differenzierung zwischen Benutzer- und Mitgliederverwaltung</li>
+						<li>Benutzer: Backend</li>
+						<li>Mitglieder: Frontend</li>
+						<li>Benutzer- und Gruppeneben bei beiden möglich</li>
+						<li>
+							zuweisbar für
+							<ul>
+								<li>Seiten,</li>
+								<li>FE-Module,</li>
+								<li>BE-Module,</li>
+								<li>Erweiterungen von Dritten</li>
+							</ul>
+						</li>
+					</ul>
+				</article>
+			</div>
+			
+			<div class="slide">
+				<header>
+					<hgroup>
+						<h1>Contao</h1>
+						<h2>3. Core-Funktionen</h2>
+					</hgroup>
+					<p class="pageCount"><span class="page">11</span> von <span class="page">28</span></p>
+				</header>
+				<article>
+					<h1>3. Core-Funktionen - Formulargenerator</h1>
+					<ul>
+						<li>komplette Formulare lassen sich zusammenklicken</li>
+						<li>HTML5-Unterstützung, z.B. durch Nutzung des placeholder-Attributs</li>
+						<li>
+							verschiedene Funktionen möglich:
+							<ul>
+								<li>E-Mail-Versand,</li>
+								<li>Speicherung in die DB,</li>
+								<li>Entgegennahme von Anhängen</li>
+							</ul>
+						</li>
+					</ul>
+				</article>
+			</div>
+			
+			<div class="slide">
+				<header>
+					<hgroup>
+						<h1>Contao</h1>
+						<h2>3. Core-Funktionen</h2>
+					</hgroup>
+					<p class="pageCount"><span class="page">12</span> von <span class="page">28</span></p>
+				</header>
+				<article>
+					<h1>3. Core-Funktionen - Integriertes CSS-Framework</h1>
+					<ul>
+						<li>Stylesheets lassen sich komplett im BE verwalten</li>
+						<li>Regeln können einfach und komfortabel gesetzt werden</li>
+						<li>bestehende Stylesheets lassen sich importieren</li>
+						<li>Unterstützung von CSS3</li>
+						<li>Unterstützung von Media Queries</li>
+					</ul>
+				</article>
+			</div>
+			
+			<div class="slide">
+				<header>
+					<hgroup>
+						<h1>Contao</h1>
+						<h2>3. Core-Funktionen</h2>
+					</hgroup>
+					<p class="pageCount"><span class="page">13</span> von <span class="page">28</span></p>
+				</header>
+				<article>
+					<h1>3. Core-Funktionen - Dateiverwaltung</h1>
+					<img src="res/img/file-management.png" alt="Dateiverwaltung" class="fullScreen" style="display:block; width:auto; height:25em;">
+				</article>
+			</div>
+			
+			<div class="slide">
+				<header>
+					<hgroup>
+						<h1>Contao</h1>
+						<h2>3. Core-Funktionen</h2>
+					</hgroup>
+					<p class="pageCount"><span class="page">14</span> von <span class="page">28</span></p>
+				</header>
+				<article>
+					<h1>3. Core-Funktionen - Themes</h1>
+					<ul>
+						<li>Contao-Themes sind mehr als bloßes "Verzeichnis auswählen"</li>
+						<li>
+							Theme-Verwaltung beinhaltet
+							<ul>
+								<li>CSS-Dateien,</li>
+								<li>Module,</li>
+								<li>Seitenlayouts</li>
+							</ul>
+						</li>
+						<li>komplett über das BE pflegbar</li>
+						<li>Themes können einer oder mehrerer Domains zugeordnet werden</li>
+					</ul>
+				</article>
+			</div>
+			
+			<div class="slide">
+				<header>
+					<hgroup>
+						<h1>Contao</h1>
+						<h2>3. Core-Funktionen</h2>
+					</hgroup>
+					<p class="pageCount"><span class="page">15</span> von <span class="page">28</span></p>
+				</header>
+				<article>
+					<h1>3. Core-Funktionen - Themes</h1>
+					<img src="res/img/themes.png" alt="Themes" class="fullScreen" style="display:block; width:auto; height:25em;">
+				</article>
+			</div>
+			
+			<div class="slide">
+				<header>
+					<hgroup>
+						<h1>Contao</h1>
+						<h2>3. Core-Funktionen</h2>
+					</hgroup>
+					<p class="pageCount"><span class="page">16</span> von <span class="page">28</span></p>
+				</header>
+				<article>
+					<h1>3. Core-Funktionen - Weitere Module</h1>
+					<ul>
+						<li>News bzw. Blog</li>
+						<li>Kalender</li>
+						<li>Newsletter</li>
+						<li>Suchmaschine</li>
+						<li><span style="color:red;">kostenpflichtiges</span> Live-Update mit einem Klick</li>
+					</ul>
+				</article>
+			</div>
+			
+			<div class="slide">
+				<header>
+					<hgroup>
+						<h1>Contao</h1>
+						<h2>4. Erweiterungen</h2>
+					</hgroup>
+					<p class="pageCount"><span class="page">17</span> von <span class="page">28</span></p>
+				</header>
+				<article>
+					<h1>4. Erweiterungen</h1>
+					<ul>
+						<li>internes Extension Repository (ER) im Backend</li>
+						<li>ER auch über contao.org sowie Drittanbieter verfügbar</li>
+						<li>mehr als 1.300 Erweiterungen verfügbar</li>
+						<li>erweitern den Funktionsumfang von Core-Modulen, z.B. efg</li>
+						<li>fügen neue Funktionalitäten hinzu</li>
+					</ul>
+				</article>
+			</div>
+			
+			<div class="slide">
+				<header>
+					<hgroup>
+						<h1>Contao</h1>
+						<h2>4. Erweiterungen</h2>
+					</hgroup>
+					<p class="pageCount"><span class="page">18</span> von <span class="page">28</span></p>
+				</header>
+				<article>
+					<h1>4. Erweiterungen - Extended Form Generator (efg)</h1>
+					<ul>
+						<li>erweitert den Funktionsumfang des Formulargenerators</li>
+						<li>
+							z.B.
+							<ul>
+								<li>Formulierung einer Bestätigungsmail</li>
+								<li>Benutzer des Kontaktformulars kann als Absender definiert werden</li>
+								<li>umfangreichere und feinere Möglichkeiten, in eine DB zu speichern</li>
+							</ul>
+						</li>
+					</ul>
+				</article>
+			</div>
+			
+			<div class="slide">
+				<header>
+					<hgroup>
+						<h1>Contao</h1>
+						<h2>4. Erweiterungen</h2>
+					</hgroup>
+					<p class="pageCount"><span class="page">19</span> von <span class="page">28</span></p>
+				</header>
+				<article>
+					<h1>4. Erweiterungen - Extended Form Generator (efg)</h1>
+					<img src="res/img/efg.png" alt="efg" class="fullScreen" style="display:block; width:auto; height:25em;">
+				</article>
+			</div>
+			
+			<div class="slide">
+				<header>
+					<hgroup>
+						<h1>Contao</h1>
+						<h2>4. Erweiterungen</h2>
+					</hgroup>
+					<p class="pageCount"><span class="page">20</span> von <span class="page">28</span></p>
+				</header>
+				<article>
+					<h1>4. Erweiterungen - MetaModels (früher Catalog)</h1>
+					<ul>
+						<li>komplett eigenständige Erweiterung</li>
+						<li>Ziel: Erstellung von Katalogen ohne Programmierkenntnisse</li>
+						<li>erstellter Katalog ähnelt einem BE-Modul</li>
+						<li>
+							mögliche Einsatzszenarien:
+							<ul>
+								<li>Shops ohne Warenkorb</li>
+								<li>Referenzlisten</li>
+								<li>Personendatenbanken</li>
+							</ul>
+						</li>
+					</ul>
+				</article>
+			</div>
+			
+			<div class="slide">
+				<header>
+					<hgroup>
+						<h1>Contao</h1>
+						<h2>4. Erweiterungen</h2>
+					</hgroup>
+					<p class="pageCount"><span class="page">21</span> von <span class="page">28</span></p>
+				</header>
+				<article>
+					<h1>4. Erweiterungen - MetaModels (früher Catalog)</h1>
+					<img src="res/img/catalog-1.png" alt="Catalog" class="fullScreen" style="display:block; width:auto; height:25em;">
+				</article>
+			</div>
+			
+			<div class="slide">
+				<header>
+					<hgroup>
+						<h1>Contao</h1>
+						<h2>4. Erweiterungen</h2>
+					</hgroup>
+					<p class="pageCount"><span class="page">22</span> von <span class="page">28</span></p>
+				</header>
+				<article>
+					<h1>4. Erweiterungen - MetaModels (früher Catalog)</h1>
+					<img src="res/img/catalog-2.png" alt="Catalog" class="fullScreen" style="display:block; width:auto; height:25em;">
+				</article>
+			</div>
+			
+			<div class="slide">
+				<header>
+					<hgroup>
+						<h1>Contao</h1>
+						<h2>5. Contao aus Frontendsicht</h2>
+					</hgroup>
+					<p class="pageCount"><span class="page">23</span> von <span class="page">28</span></p>
+				</header>
+				<article>
+					<h1>5. Contao aus Frontendsicht</h1>
+					<ul>
+						<li>FE-Templates haben bereits hohe Qualität</li>
+						<li>Auswahl von HTML5- oder XHTML-Templates</li>
+						<li>Markup ist barrierearm (genügt W3C/ WAI-Anforderungen, Quelle: contao.org)</li>
+						<li>ein Bearbeiten und Anpassen an eigenen Stil ist nicht immer hilfreich</li>
+						<li>
+							z.B. fe_page (das Mastertemplate):
+							<ul>
+								<li>muss nach jedem Update überprüft werden, da in der Vergangengeit oftmals Änderungen vorgenommen wurden</li>
+								<li>Beispiel: Umstellung des Doctype (auf HTML5)</li>
+							</ul>
+						</li>
+						<li>Updatesicherheit: Templates werden in eigenem Verzeichnis gespeichert</li>
+					</ul>
+				</article>
+			</div>
+			
+			<div class="slide">
+				<header>
+					<hgroup>
+						<h1>Contao</h1>
+						<h2>5. Contao aus Frontendsicht</h2>
+					</hgroup>
+					<p class="pageCount"><span class="page">24</span> von <span class="page">28</span></p>
+				</header>
+				<article>
+					<h1>5. Contao aus Frontendsicht</h1>
+					<ul>
+						<li><span style="color:red;">hilfreich:</span> Contao ermittelt User Agent und gibt diesen als CSS-Klasse im &lt;body&gt; aus</li>
+						<li>PHP ist in allen Templates verfügbar</li>
+						<li>dabei ist sogar eine DB-Abfrage in einem Template möglich</li>
+						<li>
+							viele Module und Erweiterungen nutzen verschachtelte Templates
+							<ul>
+								<li>mod_xxx.html5 für das äußere Modul-Template</li>
+								<li>layout_xxx.html5 für die Darstellung des Inhalts</li>
+							</ul>
+						</li>
+						<li><span style="color:red;">hilfreich:</span> alle in einem Template verfügbaren Variablen und Arrays lassen sich mittels <code>&lt;?php echo $this-&gt;showTemplateVars(); ?&gt;</code> anzeigen</li>
+					</ul>
+				</article>
+			</div>
+			
+			<div class="slide">
+				<header>
+					<hgroup>
+						<h1>Contao</h1>
+						<h2>6. Stärken</h2>
+					</hgroup>
+					<p class="pageCount"><span class="page">25</span> von <span class="page">28</span></p>
+				</header>
+				<article>
+					<h1>6. Stärken</h1>
+					<ul>
+						<li>durchgehend valide und semantische Templates</li>
+						<li>hohe Core-Funktionalität</li>
+						<li><span style="color:red;">relativ</span> Einsteigerfreundlich</li>
+						<li>zahlreiche Erweiterungen</li>
+						<li>umfangreiche Cachingmechanismen</li>
+						<li>Markup und Scripte lassen sich von Haus aus komprimieren</li>
+						<li>Dateiarbeit komplett über BE möglich</li>
+					</ul>
+				</article>
+			</div>
+			
+			<div class="slide">
+				<header>
+					<hgroup>
+						<h1>Contao</h1>
+						<h2>6. Stärken</h2>
+					</hgroup>
+					<p class="pageCount"><span class="page">26</span> von <span class="page">28</span></p>
+				</header>
+				<article>
+					<h1>6. Stärken</h1>
+					<ul>
+						<li>
+							hohe Flexibilität in den Inhalten
+							<ul>
+								<li>Artikel können unterschiedliche Inhaltselemente haben</li>
+								<li>Newsbeiträge können unterschiedliche Inhaltselemente haben</li>
+							</ul>
+						</li>
+						<li>
+							Inserttags
+							<ul>
+								<li>Platzhalter, die durch Inhalte ersetzt werden</li>
+								<li>z.B. Links zu Seiten oder Artikeln</li>
+								<li>aber auch Daten des angemeldeten Mitglieds</li>
+							</ul>
+						</li>
+					</ul>
+				</article>
+			</div>
+			
+			<div class="slide">
+				<header>
+					<hgroup>
+						<h1>Contao</h1>
+						<h2>7. Schwächen</h2>
+					</hgroup>
+					<p class="pageCount"><span class="page">27</span> von <span class="page">28</span></p>
+				</header>
+				<article>
+					<h1>7. Schwächen</h1>
+					<ul>
+						<li>
+							keine komplette Trennung der Inhalte möglich
+							<ul>
+								<li>Inhalte über Inserttags über Webseiten hinweg</li>
+								<li>Seitenauswahl aus anderen Webseiten möglich</li>
+							</ul>
+						</li>
+						<li>kein Frontend-Editing</li>
+						<li>Mehrsprachigkeit muss umständlich über zweiten Seitenbaum dargestellt werden</li>
+						<li><span style="color:red;">je nach Sichtweise:</span> fertige Templates müssen aufwendig umgebaut werden</li>
+						<li>Das Look & Feel von Contao ist subjektiv</li>
+					</ul>
+				</article>
+			</div>
+			
+			<div class="slide">
+				<header>
+					<hgroup>
+						<h1>Contao</h1>
+						<h2>Ende</h2>
+					</hgroup>
+					<p class="pageCount"><span class="page">28</span> von <span class="page">28</span></p>
+				</header>
+				<article>
+					<h1>Vielen Dank!</h1>
+				</article>
+			</div>
+		</div>
+	
+	</body>
+</html>
