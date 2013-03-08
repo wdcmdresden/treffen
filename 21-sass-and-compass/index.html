@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <title>Sass/Scss</title>
+    <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700|Fresca|Ubuntu+Mono|Droid+Sans+Mono' rel='stylesheet' type='text/css'></link>
+    <link href="stylesheets/all.css" media="screen" rel="stylesheet" type="text/css" />
+    <script src="javascripts/head.min.js" type="text/javascript"></script>
+  </head>
+  <body class='index'>
+    <div class='reveal'>
+      <div class='state-background'>
+        <div class='slides'>
+          <section data-state='white'>
+  <h1>
+    Sass
+  </h1>
+  <p>Syntactically Awesome Stylesheets</p>
+  <img alt="Sass Logo" src="http://sass-lang.com/images/sass.gif" />
+  <img alt="WDCM Dresden" src="http://wdcmdresden.com/wp-content/themes/default/img/wdcm.png" />
+</section>
+<section id='intro'>
+  <section>
+    <h2>Warum?</h2>
+  </section>
+  <section>
+    <img src="http://bethesignal.org/wp-content/uploads/2009/06/css-is-awesome-700x375.jpg" />
+    <p>CSS</p>
+    <ul class='fragment'>
+      <li>
+        <strike>Variablen</strike>
+      </li>
+      <li>
+        <strike>Mathematik</strike>
+      </li>
+      <li>
+        <strike>Import</strike>
+      </li>
+      <li>Vendor-Prefixes (-webkit, -moz (-o))</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Sass</h2>
+    kompiliert Scss &rarr; CSS
+    <img src="images/import.png" />
+  </section>
+  <section>
+    <ul>
+      <li>baut auf CSS Syntax auf</li>
+      <li>erweitert diese</li>
+      <li>
+        <strong>Gültige* CSS-Dateien sind auch gültige Scss-Dateien</strong>
+        <div class='small'>Außer einige wenige obskure (IE)-CSS-Hacks</div>
+      </li>
+    </ul>
+  </section>
+</section>
+<section id='features'>
+  <section>
+    <h1>Features</h1>
+  </section>
+  <section>
+    <h3>Nesting</h3>
+    <div class='scss'>Scss <div class="highlight"><pre><span class="nt">article</span> <span class="p">{</span>
+  <span class="na">margin</span><span class="o">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+  <span class="nt">p</span> <span class="p">{</span>
+    <span class="na">text-align</span><span class="o">:</span> <span class="no">justify</span><span class="p">;</span>
+    <span class="nt">a</span><span class="nc">.special</span> <span class="p">{</span>
+      <span class="na">color</span><span class="o">:</span> <span class="mh">#855</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div> </div><div class='css fragment'>Css <div class="highlight"><pre><span class="nt">article</span> <span class="p">{</span>
+  <span class="k">margin</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">article</span> <span class="nt">p</span> <span class="p">{</span>
+  <span class="k">text-align</span><span class="o">:</span> <span class="k">justify</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">article</span> <span class="nt">p</span> <span class="nt">a</span><span class="nc">.special</span> <span class="p">{</span>
+  <span class="k">color</span><span class="o">:</span> <span class="m">#855</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div> </div>
+    <div class='fragment'>
+      https://speakerdeck.com/jonrohan/githubs-css-performance
+    </div>
+  </section>
+  <section>
+    <h3>Nesting &dash; Advanced '&amp;'</h3>
+    <div class='scss'>Scss <div class="highlight"><pre><span class="nt">a</span><span class="nc">.btn</span> <span class="p">{</span>
+  <span class="na">color</span><span class="o">:</span> <span class="mh">#555</span><span class="p">;</span>
+  <span class="k">&amp;</span><span class="nd">:hover</span><span class="o">,</span> <span class="k">&amp;</span><span class="nd">:active</span> <span class="p">{</span>
+    <span class="na">text-decoration</span><span class="o">:</span> <span class="no">underline</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">&amp;</span><span class="nc">.btn-primary</span> <span class="p">{</span>
+    <span class="na">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div> </div><div class='css fragment'>Css <div class="highlight"><pre><span class="nt">a</span><span class="nc">.btn</span> <span class="p">{</span>
+  <span class="k">color</span><span class="o">:</span> <span class="m">#555</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">a</span><span class="nc">.btn</span><span class="nd">:hover</span><span class="o">,</span> <span class="nt">a</span><span class="nc">.btn</span><span class="nd">:active</span> <span class="p">{</span>
+  <span class="k">text-decoration</span><span class="o">:</span> <span class="k">underline</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">a</span><span class="nc">.btn.btn-primary</span> <span class="p">{</span>
+  <span class="k">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div> </div>
+  </section>
+  <!-- Modernizr -->
+  <section>
+    <h3>Kontext!</h3>
+    z.B. für modernizr
+    <div class="highlight"><pre><span class="nt">&lt;html</span> <span class="na">class=</span><span class="s">&quot;js no-touch postmessage history multiplebgs boxshadow opacity cssanimations csscolumns cssgradients csstransforms csstransitions .......&quot;</span><span class="nt">&gt;</span>
+</pre></div>
+    <div class='fragment'>
+      <div class='scss'>Scss <div class="highlight"><pre><span class="nc">.fancy</span> <span class="p">{</span>
+  <span class="na">background-image</span><span class="o">:</span> <span class="nf">linear-gradient</span><span class="p">(</span><span class="no">top</span> <span class="no">center</span><span class="o">,</span> <span class="mh">#555</span><span class="o">,</span> <span class="mh">#888</span><span class="p">);</span>
+  <span class="nc">.no-cssgradients</span> <span class="k">&amp;</span> <span class="p">{</span>
+    <span class="na">background-color</span><span class="o">:</span> <span class="mh">#555</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div> </div><div class='css fragment'>Css <div class="highlight"><pre><span class="nc">.fancy</span> <span class="p">{</span>
+  <span class="k">background-image</span><span class="o">:</span> <span class="n">linear</span><span class="o">-</span><span class="n">gradient</span><span class="p">(</span><span class="k">top</span> <span class="k">center</span><span class="o">,</span> <span class="m">#555555</span><span class="o">,</span> <span class="m">#888888</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nc">.no-cssgradients</span> <span class="nc">.fancy</span> <span class="p">{</span>
+  <span class="k">background-color</span><span class="o">:</span> <span class="m">#555</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div> </div>
+    </div>
+  </section>
+  <section>
+    <h3>Variablen</h3>
+    <div class='scss'>Scss <div class="highlight"><pre><span class="nv">$primary-color</span><span class="o">:</span> <span class="mh">#ff0000</span><span class="p">;</span>
+<span class="c1">// oder $primary-color: red;</span>
+
+<span class="nt">h2</span> <span class="p">{</span>
+  <span class="na">color</span><span class="o">:</span> <span class="nv">$primary-color</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">h1</span> <span class="p">{</span>
+  <span class="na">color</span><span class="o">:</span> <span class="nf">invert</span><span class="p">(</span><span class="nv">$primary-color</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div> </div><div class='css fragment'>Css <div class="highlight"><pre><span class="nt">h2</span> <span class="p">{</span>
+  <span class="k">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">h1</span> <span class="p">{</span>
+  <span class="k">color</span><span class="o">:</span> <span class="nb">cyan</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div> </div>
+  </section>
+  <section>
+    <h3>Abstände</h3>
+    <div class='scss'>Scss <div class="highlight"><pre><span class="nv">$width</span><span class="o">:</span> <span class="mi">800</span><span class="kt">px</span><span class="p">;</span>
+<span class="nv">$margin</span><span class="o">:</span> <span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="nv">$real-width</span><span class="o">:</span> <span class="nv">$width</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="nv">$margin</span><span class="p">;</span>
+
+<span class="nc">.container</span> <span class="p">{</span>
+  <span class="na">width</span><span class="o">:</span> <span class="nv">$real-width</span><span class="p">;</span>
+  <span class="na">margin</span><span class="o">:</span> <span class="nv">$margin</span><span class="p">;</span>
+  <span class="nc">.half</span> <span class="p">{</span>
+    <span class="na">width</span><span class="o">:</span> <span class="nv">$real-width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div> </div><div class='css fragment'>Css <div class="highlight"><pre><span class="nc">.container</span> <span class="p">{</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">760px</span><span class="p">;</span>
+  <span class="k">margin</span><span class="o">:</span> <span class="m">20px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.container</span> <span class="nc">.half</span> <span class="p">{</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">380px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div> </div>
+  </section>
+  <section>
+    <h3>Funktionen</h3>
+    <div class='scss'>Scss <div class="highlight"><pre><span class="nv">$main</span><span class="o">:</span> <span class="mh">#666</span><span class="p">;</span>
+<span class="nv">$darker</span><span class="o">:</span> <span class="nf">darken</span><span class="p">(</span><span class="nv">$main</span><span class="o">,</span> <span class="mi">10</span><span class="kt">%</span><span class="p">);</span>
+<span class="nv">$lighter</span><span class="o">:</span> <span class="nf">lighten</span><span class="p">(</span><span class="nv">$main</span><span class="o">,</span> <span class="mi">10</span><span class="kt">%</span><span class="p">);</span>
+
+<span class="nt">h1</span> <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$main</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">h2</span> <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$darker</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">h3</span> <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$lighter</span><span class="p">;</span> <span class="p">}</span>
+</pre></div> </div><div class='css fragment'>Css <div class="highlight"><pre><span class="nt">h1</span> <span class="p">{</span>
+  <span class="k">color</span><span class="o">:</span> <span class="m">#666666</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">h2</span> <span class="p">{</span>
+  <span class="k">color</span><span class="o">:</span> <span class="m">#4d4d4d</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">h3</span> <span class="p">{</span>
+  <span class="k">color</span><span class="o">:</span> <span class="nb">gray</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div> </div>
+  </section>
+  <section>
+    <iframe src='http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html' width='800' height='600' border='0' style='background: white; transform: scale(1.2); transform-origin: center'></iframe>
+  </section>
+  <section>
+    <h3>Mixins</h3>
+    <div class='scss'>Scss <div class="highlight"><pre><span class="k">@mixin</span><span class="nf"> border-radius</span><span class="p">(</span> <span class="nv">$amount</span><span class="p">)</span> <span class="p">{</span>
+  <span class="na">border-radius</span><span class="o">:</span> <span class="nv">$amount</span> <span class="p">;</span>
+  <span class="na">-webkit-border-radius</span><span class="o">:</span> <span class="nv">$amount</span> <span class="p">;</span>
+  <span class="na">-moz-border-radius</span><span class="o">:</span> <span class="nv">$amount</span> <span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">article</span> <span class="p">{</span>
+  <span class="k">@include</span><span class="nd"> border-radius</span><span class="p">(</span><span class="mi">5</span><span class="kt">px</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div> </div><div class='css fragment'>Css <div class="highlight"><pre><span class="nt">article</span> <span class="p">{</span>
+  <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+  <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div> </div>
+  </section>
+  <section>
+    <div class='scss'>Scss <div class="highlight"><pre><span class="k">@mixin</span><span class="nf"> vendor-prefix</span><span class="p">(</span><span class="nv">$name</span><span class="o">,</span> <span class="nv">$argument</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nn">#</span><span class="p">{</span><span class="err">$</span><span class="nt">name</span><span class="p">}</span><span class="nd">:</span> <span class="err">$</span><span class="nt">argument</span><span class="o">;</span>
+  <span class="nt">-webkit-</span><span class="nn">#</span><span class="p">{</span><span class="err">$</span><span class="nt">name</span><span class="p">}</span><span class="nd">:</span> <span class="err">$</span><span class="nt">argument</span><span class="o">;</span>
+  <span class="nt">-ms-</span><span class="nn">#</span><span class="p">{</span><span class="err">$</span><span class="nt">name</span><span class="p">}</span><span class="nd">:</span> <span class="err">$</span><span class="nt">argument</span><span class="o">;</span>
+  <span class="nt">-moz-</span><span class="nn">#</span><span class="p">{</span><span class="err">$</span><span class="nt">name</span><span class="p">}</span><span class="nd">:</span> <span class="err">$</span><span class="nt">argument</span><span class="o">;</span>
+  <span class="nt">-o-</span><span class="nn">#</span><span class="p">{</span><span class="err">$</span><span class="nt">name</span><span class="p">}</span><span class="nd">:</span> <span class="err">$</span><span class="nt">argument</span><span class="o">;</span>
+<span class="p">}</span>
+
+<span class="nt">p</span> <span class="p">{</span>
+  <span class="k">@include</span><span class="nd"> vendor-prefix</span><span class="p">(</span><span class="n">hyphens</span><span class="o">,</span> <span class="no">auto</span><span class="p">);</span>
+  <span class="k">@include</span><span class="nd"> vendor-prefix</span><span class="p">(</span><span class="no">border</span><span class="o">-</span><span class="n">radius</span><span class="o">,</span> <span class="mi">5</span><span class="kt">px</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div> </div><div class='css fragment'>Css <div class="highlight"><pre><span class="nt">p</span> <span class="p">{</span>
+  <span class="n">hyphens</span><span class="o">:</span> <span class="k">auto</span><span class="p">;</span>
+  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">hyphens</span><span class="o">:</span> <span class="k">auto</span><span class="p">;</span>
+  <span class="o">-</span><span class="n">ms</span><span class="o">-</span><span class="n">hyphens</span><span class="o">:</span> <span class="k">auto</span><span class="p">;</span>
+  <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">hyphens</span><span class="o">:</span> <span class="k">auto</span><span class="p">;</span>
+  <span class="o">-</span><span class="n">o</span><span class="o">-</span><span class="n">hyphens</span><span class="o">:</span> <span class="k">auto</span><span class="p">;</span>
+  <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+  <span class="o">-</span><span class="n">ms</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+  <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+  <span class="o">-</span><span class="n">o</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div> </div>
+  </section>
+  <section>
+    <h2>Schleifen</h2>
+    <div class='scss'>Scss <div class="highlight"><pre><span class="k">@for</span> <span class="nv">$i</span> <span class="ow">from</span> <span class="mi">1</span> <span class="ow">through</span> <span class="mi">12</span> <span class="p">{</span>
+  <span class="nc">.tile</span><span class="si">#{</span><span class="nv">$i</span><span class="si">}</span> <span class="p">{</span>
+    <span class="na">width</span><span class="o">:</span> <span class="nv">$i</span> <span class="o">*</span> <span class="mi">77</span><span class="kt">px</span><span class="p">;</span>
+    <span class="na">height</span><span class="o">:</span> <span class="nv">$i</span> <span class="o">*</span> <span class="mi">77</span><span class="kt">px</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div> </div><div class='css fragment'>Css <div class="highlight"><pre><span class="nc">.tile1</span> <span class="p">{</span> <span class="k">width</span><span class="o">:</span> <span class="m">77px</span><span class="p">;</span> <span class="k">height</span><span class="o">:</span> <span class="m">77px</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="nc">.tile2</span> <span class="p">{</span> <span class="k">width</span><span class="o">:</span> <span class="m">154px</span><span class="p">;</span> <span class="k">height</span><span class="o">:</span> <span class="m">154px</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="nc">.tile3</span> <span class="p">{</span> <span class="k">width</span><span class="o">:</span> <span class="m">231px</span><span class="p">;</span> <span class="k">height</span><span class="o">:</span> <span class="m">231px</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="nc">.tile4</span> <span class="p">{</span> <span class="k">width</span><span class="o">:</span> <span class="m">308px</span><span class="p">;</span> <span class="k">height</span><span class="o">:</span> <span class="m">308px</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="nc">.tile5</span> <span class="p">{</span> <span class="k">width</span><span class="o">:</span> <span class="m">385px</span><span class="p">;</span> <span class="k">height</span><span class="o">:</span> <span class="m">385px</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="nc">.tile6</span> <span class="p">{</span> <span class="k">width</span><span class="o">:</span> <span class="m">462px</span><span class="p">;</span> <span class="k">height</span><span class="o">:</span> <span class="m">462px</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="nc">.tile7</span> <span class="p">{</span> <span class="k">width</span><span class="o">:</span> <span class="m">539px</span><span class="p">;</span> <span class="k">height</span><span class="o">:</span> <span class="m">539px</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="nc">.tile8</span> <span class="p">{</span> <span class="k">width</span><span class="o">:</span> <span class="m">616px</span><span class="p">;</span> <span class="k">height</span><span class="o">:</span> <span class="m">616px</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="nc">.tile9</span> <span class="p">{</span> <span class="k">width</span><span class="o">:</span> <span class="m">693px</span><span class="p">;</span> <span class="k">height</span><span class="o">:</span> <span class="m">693px</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="nc">.tile10</span> <span class="p">{</span> <span class="k">width</span><span class="o">:</span> <span class="m">770px</span><span class="p">;</span> <span class="k">height</span><span class="o">:</span> <span class="m">770px</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="nc">.tile11</span> <span class="p">{</span> <span class="k">width</span><span class="o">:</span> <span class="m">847px</span><span class="p">;</span> <span class="k">height</span><span class="o">:</span> <span class="m">847px</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="nc">.tile12</span> <span class="p">{</span> <span class="k">width</span><span class="o">:</span> <span class="m">924px</span><span class="p">;</span> <span class="k">height</span><span class="o">:</span> <span class="m">924px</span><span class="p">;</span> <span class="p">}</span>
+</pre></div> </div>
+  </section>
+  <section>
+    <div class='scss'>Scss <div class="highlight"><pre><span class="k">@mixin</span><span class="nf"> hyphens</span><span class="p">(</span><span class="nv">$value</span><span class="o">:</span> <span class="s2">&quot;manual&quot;</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">@each</span> <span class="err">$</span><span class="nt">prefix</span> <span class="nt">in</span> <span class="nt">-webkit-</span><span class="o">,</span> <span class="nt">-moz-</span><span class="o">,</span> <span class="nt">-o-</span><span class="o">,</span> <span class="s2">&quot;&quot;</span> <span class="p">{</span>
+    <span class="nn">#</span><span class="p">{</span><span class="err">$</span><span class="nt">prefix</span><span class="p">}</span><span class="na">hyphens</span><span class="o">:</span> <span class="nv">$value</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="nt">p</span> <span class="p">{</span>
+  <span class="na">text-align</span><span class="o">:</span> <span class="no">justify</span><span class="p">;</span>
+  <span class="k">@include</span><span class="nd"> hyphens</span><span class="p">(</span><span class="no">auto</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div> </div><div class='css fragment'>Css <div class="highlight"><pre><span class="nt">p</span> <span class="p">{</span>
+  <span class="k">text-align</span><span class="o">:</span> <span class="k">justify</span><span class="p">;</span>
+  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">hyphens</span><span class="o">:</span> <span class="k">auto</span><span class="p">;</span>
+  <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">hyphens</span><span class="o">:</span> <span class="k">auto</span><span class="p">;</span>
+  <span class="o">-</span><span class="n">o</span><span class="o">-</span><span class="n">hyphens</span><span class="o">:</span> <span class="k">auto</span><span class="p">;</span>
+  <span class="n">hyphens</span><span class="o">:</span> <span class="k">auto</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div> </div>
+  </section>
+  <section>
+    <h2>Bedingungen</h2>
+    <div class='scss'>Scss <div class="highlight"><pre><span class="k">@mixin</span><span class="nf"> button</span><span class="p">(</span><span class="nv">$color</span><span class="p">)</span> <span class="p">{</span>
+  <span class="na">background</span><span class="o">:</span> <span class="nv">$color</span><span class="p">;</span>
+  <span class="k">@if</span> <span class="nf">lightness</span><span class="p">(</span><span class="nv">$color</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">50</span> <span class="p">{</span>
+    <span class="na">color</span><span class="o">:</span> <span class="nb">black</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">@else</span> <span class="p">{</span>
+    <span class="na">color</span><span class="o">:</span> <span class="nb">white</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nt">a</span><span class="nc">.button-dark</span>  <span class="p">{</span> <span class="k">@include</span><span class="nd"> button</span><span class="p">(</span><span class="mh">#444</span><span class="p">)</span> <span class="p">}</span>
+<span class="nt">a</span><span class="nc">.button-light</span> <span class="p">{</span> <span class="k">@include</span><span class="nd"> button</span><span class="p">(</span><span class="mh">#999</span><span class="p">)</span> <span class="p">}</span>
+</pre></div> </div><div class='css fragment'>Css <div class="highlight"><pre><span class="nt">a</span><span class="nc">.button-dark</span> <span class="p">{</span>
+  <span class="k">background</span><span class="o">:</span> <span class="m">#444444</span><span class="p">;</span>
+  <span class="k">color</span><span class="o">:</span> <span class="nb">white</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">a</span><span class="nc">.button-light</span> <span class="p">{</span>
+  <span class="k">background</span><span class="o">:</span> <span class="m">#999999</span><span class="p">;</span>
+  <span class="k">color</span><span class="o">:</span> <span class="nb">black</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div> </div>
+  </section>
+  <section>
+    <h3>Import</h3>
+    <div class="highlight"><pre><span class="k">@import</span> <span class="s2">&quot;core&quot;</span><span class="p">;</span>
+<span class="k">@import</span> <span class="s2">&quot;typography&quot;</span> <span class="o">,</span> <span class="s2">&quot;grid&quot;</span><span class="p">;</span>
+<span class="k">@import</span> <span class="s2">&quot;styles/*&quot;</span><span class="p">;</span>
+<span class="k">@import</span> <span class="s2">&quot;**/*;&quot;</span>
+</pre></div>
+    <img src="images/import.png" />
+  </section>
+  <section>
+    <h3>Nested import</h3>
+    <div class="highlight"><pre><span class="k">@media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">min-width</span><span class="nd">:</span> <span class="nt">320px</span><span class="o">)</span> <span class="p">{</span>
+  <span class="k">@import</span> <span class="s2">&quot;phone&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">body</span><span class="nc">.admin</span> <span class="p">{</span>
+  <span class="k">@import</span> <span class="s2">&quot;admin&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+    <div class='fragment'>
+      <div class='scss'>Scss <div class="highlight"><pre><span class="k">@media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">min-width</span><span class="nd">:</span> <span class="nt">320px</span><span class="o">)</span> <span class="p">{</span>
+  <span class="c1">// inhalt von phone.css</span>
+  <span class="nc">.sidebar</span> <span class="p">{</span> <span class="na">display</span><span class="o">:</span> <span class="no">none</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+<span class="nt">body</span><span class="nc">.admin</span> <span class="p">{</span>
+  <span class="c1">// user.css</span>
+  <span class="nt">a</span><span class="nc">.logout</span> <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nb">blue</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+</pre></div> </div><div class='css fragment'>Css <div class="highlight"><pre><span class="k">@media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="nt">320px</span><span class="o">)</span> <span class="p">{</span>
+  <span class="nc">.sidebar</span> <span class="p">{</span>
+    <span class="k">display</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="nt">body</span><span class="nc">.admin</span> <span class="nt">a</span><span class="nc">.logout</span> <span class="p">{</span>
+  <span class="k">color</span><span class="o">:</span> <span class="nb">blue</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div> </div>
+    </div>
+  </section>
+</section>
+<section id='wdcm'>
+  <section>
+    <h1>Installation</h1>
+  </section>
+  <section>
+    <h3>1. Kommandozeile mittels Ruby</h3>
+    <div class='highlight'>
+      <pre>$ gem install sass&#x000A;$ sass --watch screen.scss&#x000A;&#x000A;>>> Sass is watching for changes. Press Ctrl-C to stop&#x000A;>>> Change detected to: ./screen.scss&#x000A;overwrite ./screen.css</pre>
+    </div>
+  </section>
+  <section>
+    <h3>2. Apps</h3>
+    <ul>
+      <li>
+        <a href="http://mhs.github.com/scout-app/">ScoutApp (Win, Mac, free)</a>
+        <div class='small'>
+          Compass, Sass
+        </div>
+      </li>
+      <li>
+        <a href="http://incident57.com/codekit/">CodeKit (Mac, $25)</a>
+        <div class='small'>
+          Less, Sass, Stylus, Jade, Haml, Slim, CoffeeScript, Javascript and Compass
+        </div>
+      </li>
+      <li>
+        <a href="http://fireapp.handlino.com/">Fire.app (Win, Mac, Linux $14)</a>
+        <div class='small'>
+          CoffeeScript, Sass, Compass, Haml, Slim, Markdown
+        </div>
+      </li>
+      <li>
+        <a href="http://compass.handlino.com/">Compass.app (Mac $10)</a>
+        <div class='small'>
+          Compass, Sass, Webserver, Livereload
+        </div>
+      </li>
+      <li>
+        <a href="http://livereload.com/">LiveReload (Mac $9.99, Win alpha)</a>
+        <div class='small'>
+          LESS, SASS, Compass, Stylus, CoffeeScript, IcedCoffeeScript, Eco, SLIM, HAML, Jade
+        </div>
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h3>3. Integration in Build-Tools</h3>
+    <ul>
+      <li>Rails (default seit 3.1)</li>
+      <li>
+        <a href="https://npmjs.org/package/node-sass">Node.js/Express.js</a>
+      </li>
+      <li>
+        Module für gängige Frameworks
+        <a href="http://drupal.org/project/sass">Drupal</a>
+        <a href="https://github.com/roytomeij/sass-for-wordpress/">Wordpress</a>
+        <a href="http://typo3.org/extension-manuals/sassify/1.2.2/view/">Typo3</a>
+      </li>
+      <li>Middleman, Yeoman</li>
+      <li>
+        <strong>
+          Compass mit jedem anderen Projekt
+        </strong>
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h2>sass-convert</h2>
+    <a href="http://css2sass.heroku.com/">http://css2sass.heroku.com/</a>
+    <div class="highlight"><pre><span class="nc">.highlight</span> <span class="p">{</span> <span class="k">background</span><span class="o">:</span> <span class="m">#2B2B2B</span><span class="p">}</span>
+<span class="nc">.highlight</span> <span class="nc">.hll</span> <span class="p">{</span> <span class="k">background-color</span><span class="o">:</span> <span class="m">#ffffcc</span> <span class="p">}</span>
+<span class="nc">.highlight</span> <span class="nc">.c</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span> <span class="m">#BC9458</span><span class="p">}</span>
+</pre></div>
+    <h2>&darr;</h2>
+    <div class="highlight"><pre><span class="nc">.highlight</span> <span class="p">{</span>
+  <span class="na">background</span><span class="o">:</span> <span class="mh">#2B2B2B</span><span class="p">;</span>
+  <span class="nc">.hll</span> <span class="p">{</span>
+    <span class="na">background-color</span><span class="o">:</span> <span class="mh">#ffffcc</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nc">.c</span> <span class="p">{</span>
+    <span class="na">color</span><span class="o">:</span> <span class="mh">#BC9458</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+  </section>
+</section>
+<section id='compass'>
+  <section>
+    <h1>Compass</h1>
+    "Standard Library" for Sass
+    <ul>
+      <li>CSS3</li>
+      <li>Sprites</li>
+      <li>Utilities</li>
+    </ul>
+  </section>
+  <section>
+    <h3>Installation</h3>
+    <div class='highlight'>
+      <pre>gem install compass&#x000A;compass create myproject&#x000A;compass watch</pre>
+    </div>
+    <img src="images/compass.png" />
+  </section>
+  <section>
+    <h3>config.rb</h3>
+    <div class="highlight"><pre><span class="n">http_path</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span>
+<span class="n">css_dir</span> <span class="o">=</span> <span class="s2">&quot;stylesheets&quot;</span>
+<span class="n">sass_dir</span> <span class="o">=</span> <span class="s2">&quot;sass&quot;</span>
+<span class="n">images_dir</span> <span class="o">=</span> <span class="s2">&quot;images&quot;</span>
+<span class="n">javascripts_dir</span> <span class="o">=</span> <span class="s2">&quot;javascripts&quot;</span>
+
+<span class="n">output_style</span> <span class="o">=</span> <span class="ss">:expanded</span>  <span class="c1"># or :nested or :compact or :compressed</span>
+<span class="n">line_comments</span> <span class="o">=</span> <span class="kp">false</span>
+
+<span class="c1"># Plugins!</span>
+<span class="nb">require</span> <span class="s1">&#39;ninesixty&#39;</span>
+<span class="nb">require</span> <span class="s1">&#39;susy&#39;</span>
+</pre></div>
+    <div class='fragment'>
+      line_comments = true
+      <div class="highlight"><pre><span class="c">/* line 107, stylesheets/_mixins.css.sass */</span>
+<span class="nt">label</span> <span class="p">{</span>
+  <span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+    </div>
+  </section>
+  <section>
+    <h3>CSS3</h3>
+    <div class='scss'>Scss <div class="highlight"><pre><span class="k">@import</span> <span class="s2">&quot;compass/css3/transform&quot;</span><span class="p">;</span>
+<span class="k">@import</span> <span class="s2">&quot;compass/css3/images&quot;</span><span class="p">;</span>
+<span class="nt">a</span> <span class="p">{</span>
+  <span class="k">@include</span><span class="nd"> transform</span><span class="p">(</span> <span class="nf">scale</span><span class="p">(</span><span class="mi">1</span><span class="mf">.2</span><span class="p">)</span> <span class="p">);</span>
+  <span class="k">@include</span><span class="nd"> background-image</span><span class="p">(</span><span class="nf">linear-gradient</span><span class="p">(</span><span class="no">left</span> <span class="no">top</span><span class="o">,</span> <span class="nb">white</span><span class="o">,</span> <span class="mh">#dddddd</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div> </div><div class='css fragment'>Css <div class="highlight"><pre><span class="nt">a</span> <span class="p">{</span>
+  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">transform</span><span class="o">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">1</span><span class="o">.</span><span class="m">2</span><span class="p">);</span>
+  <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">transform</span><span class="o">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">1</span><span class="o">.</span><span class="m">2</span><span class="p">);</span>
+  <span class="o">-</span><span class="n">ms</span><span class="o">-</span><span class="n">transform</span><span class="o">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">1</span><span class="o">.</span><span class="m">2</span><span class="p">);</span>
+  <span class="o">-</span><span class="n">o</span><span class="o">-</span><span class="n">transform</span><span class="o">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">1</span><span class="o">.</span><span class="m">2</span><span class="p">);</span>
+  <span class="n">transform</span><span class="o">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">1</span><span class="o">.</span><span class="m">2</span><span class="p">);</span>
+  <span class="k">background-image</span><span class="o">:</span> <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">gradient</span><span class="p">(</span><span class="n">linear</span><span class="o">,</span> <span class="m">0</span><span class="o">%</span> <span class="m">0</span><span class="o">%,</span> <span class="m">100</span><span class="o">%</span> <span class="m">100</span><span class="o">%,</span> <span class="k">color</span><span class="o">-</span><span class="n">stop</span><span class="p">(</span><span class="m">0</span><span class="o">%,</span> <span class="m">#ffffff</span><span class="p">)</span><span class="o">,</span> <span class="k">color</span><span class="o">-</span><span class="n">stop</span><span class="p">(</span><span class="m">100</span><span class="o">%,</span> <span class="m">#dddddd</span><span class="p">));</span>
+  <span class="k">background-image</span><span class="o">:</span> <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">linear</span><span class="o">-</span><span class="n">gradient</span><span class="p">(</span><span class="k">left</span> <span class="k">top</span><span class="o">,</span> <span class="m">#ffffff</span><span class="o">,</span> <span class="m">#dddddd</span><span class="p">);</span>
+  <span class="k">background-image</span><span class="o">:</span> <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">linear</span><span class="o">-</span><span class="n">gradient</span><span class="p">(</span><span class="k">left</span> <span class="k">top</span><span class="o">,</span> <span class="m">#ffffff</span><span class="o">,</span> <span class="m">#dddddd</span><span class="p">);</span>
+  <span class="k">background-image</span><span class="o">:</span> <span class="o">-</span><span class="n">o</span><span class="o">-</span><span class="n">linear</span><span class="o">-</span><span class="n">gradient</span><span class="p">(</span><span class="k">left</span> <span class="k">top</span><span class="o">,</span> <span class="m">#ffffff</span><span class="o">,</span> <span class="m">#dddddd</span><span class="p">);</span>
+  <span class="k">background-image</span><span class="o">:</span> <span class="n">linear</span><span class="o">-</span><span class="n">gradient</span><span class="p">(</span><span class="k">left</span> <span class="k">top</span><span class="o">,</span> <span class="m">#ffffff</span><span class="o">,</span> <span class="m">#dddddd</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div> </div>
+  </section>
+  <section>
+    <h3>Sprites</h3>
+    <img style="background: white" src="images/sprite.png" />
+    <p>Weil:</p>
+    <ul>
+      <li>Ladezeit/Serverload</li>
+      <li>Image hover Wechsel ohne Unterbrechung</li>
+    </ul>
+  </section>
+  <section>
+    <div class='scss'>Scss <div class="highlight"><pre><span class="k">@import</span> <span class="s2">&quot;compass&quot;</span><span class="p">;</span>
+<span class="k">@import</span> <span class="s2">&quot;icons/*.png&quot;</span><span class="p">;</span>
+<span class="k">@include</span><span class="nd"> all-icons-sprites</span><span class="p">;</span>
+</pre></div> </div><div class='css fragment'>Css <div class="highlight"><pre><span class="nc">.icons-sprite</span><span class="o">,</span> <span class="nc">.icons-glyphicons_000_glass</span><span class="o">,</span> <span class="nc">.icons-glyphicons_001_leaf</span><span class="o">,</span> <span class="nc">.icons-glyphicons_002_dog</span><span class="o">,</span> <span class="nc">.icons-glyphicons_003_user</span><span class="o">,</span> <span class="nc">.icons-glyphicons_004_girl</span><span class="o">,</span> <span class="nc">.icons-glyphicons_005_car</span><span class="o">,</span> <span class="nc">.icons-glyphicons_006_user_add</span><span class="o">,</span> <span class="nc">.icons-glyphicons_007_user_remove</span><span class="o">,</span> <span class="nc">.icons-glyphicons_008_film</span><span class="o">,</span> <span class="nc">.icons-glyphicons_009_magic</span> <span class="p">{</span> <span class="k">background</span><span class="o">:</span> <span class="sx">url(&#39;/images/icons-s824d25e81f.png&#39;)</span> <span class="k">no-repeat</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="nc">.icons-glyphicons_000_glass</span> <span class="p">{</span> <span class="k">background-position</span><span class="o">:</span> <span class="m">0</span> <span class="m">-74px</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="nc">.icons-glyphicons_001_leaf</span> <span class="p">{</span> <span class="k">background-position</span><span class="o">:</span> <span class="m">0</span> <span class="m">0</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="nc">.icons-glyphicons_002_dog</span> <span class="p">{</span> <span class="k">background-position</span><span class="o">:</span> <span class="m">0</span> <span class="m">-49px</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="nc">.icons-glyphicons_003_user</span> <span class="p">{</span> <span class="k">background-position</span><span class="o">:</span> <span class="m">0</span> <span class="m">-186px</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="nc">.icons-glyphicons_004_girl</span> <span class="p">{</span> <span class="k">background-position</span><span class="o">:</span> <span class="m">0</span> <span class="m">-120px</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="nc">.icons-glyphicons_005_car</span> <span class="p">{</span> <span class="k">background-position</span><span class="o">:</span> <span class="m">0</span> <span class="m">-98px</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="nc">.icons-glyphicons_006_user_add</span> <span class="p">{</span> <span class="k">background-position</span><span class="o">:</span> <span class="m">0</span> <span class="m">-142px</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="nc">.icons-glyphicons_007_user_remove</span> <span class="p">{</span> <span class="k">background-position</span><span class="o">:</span> <span class="m">0</span> <span class="m">-164px</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="nc">.icons-glyphicons_008_film</span> <span class="p">{</span> <span class="k">background-position</span><span class="o">:</span> <span class="m">0</span> <span class="m">-208px</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="nc">.icons-glyphicons_009_magic</span> <span class="p">{</span> <span class="k">background-position</span><span class="o">:</span> <span class="m">0</span> <span class="m">-25px</span><span class="p">;</span> <span class="p">}</span>
+</pre></div> </div>
+  </section>
+  <section>
+    <h3>Utilities</h3>
+    <ul>
+      <li>Clearfix</li>
+      <li>Inline-List</li>
+      <li>Hacks (z.B. min-width)</li>
+      <li>Reset</li>
+      <li>
+        CSS-Validator
+        <pre class='small'>compass validate .</pre>
+      </li>
+      <li>
+        Tonnen an Funktionen
+        <div class='small'>
+          <a href="http://compass.aether.ru/">Referenz</a>
+        </div>
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h3>Extensions</h3>
+    <ul>
+      <li>
+        <a href="https://github.com/StanAngeloff/compass-magick">Compass Magick</a>
+        <div class='small'>Gradienten-PNGs automatisch generieren</div>
+      </li>
+      <li>
+        <a href="https://github.com/hecbuma/compass-bootstrap">Twitter bootstrap</a>
+        u.v.m.
+        <div class='small'>960.gs, Grid Coordinates, GraphPaper, Baseline, Less Framework 4, 52 Framework, Twitter Bootstrap, Foundation, Stitch, Susy, Salsa, Blankwork, Adaptive Grid, HTML5 Boilerplate</div>
+      </li>
+      <li>
+        <a href="http://jaredhardy.com/sassy-buttons/">Sassy Buttons</a>
+        <div class='small'>easy CSS3 buttons</div>
+      </li>
+    </ul>
+    <blockquote class='small'>
+      <a href="https://github.com/chriseppstein/compass/wiki/Compass-Plugins">github.com/chriseppstein/compass/wiki/Compass-Plugins</a>
+    </blockquote>
+  </section>
+  <section data-state='alert'>
+    <img src="http://maddesigns.de/wp-content/uploads/2011/12/css_sass_compass.jpg" />
+  </section>
+</section>
+<section>
+  <section>
+    <h2>Scss vs Sass</h2>
+    <p>Sass:</p>
+    <ul>
+      <li>kürzere Syntax a la Python, CoffeeScript, HAML</li>
+      <li>Geschmacksfrage &rarr; gleichmächtig</li>
+    </ul>
+  </section>
+  <section>
+    <h3>Scss</h3>
+    <div class="highlight"><pre><span class="nt">article</span> <span class="p">{</span>
+  <span class="na">margin-bottom</span><span class="o">:</span> <span class="mi">2</span><span class="kt">em</span><span class="p">;</span>
+  <span class="nc">.entry-content</span> <span class="p">{</span>
+    <span class="na">border-top</span><span class="o">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="no">solid</span> <span class="mh">#eee</span><span class="p">;</span>
+    <span class="k">@include</span><span class="nd"> box-shadow</span><span class="p">(</span><span class="mi">2</span><span class="kt">px</span><span class="o">,</span> <span class="nb">black</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+    <h3>Sass</h3>
+    <div class="highlight"><pre><span class="nt">article</span>
+  <span class="na">margin-bottom</span><span class="o">:</span> <span class="mi">2</span><span class="kt">em</span>
+  <span class="nc">.entry-content</span>
+    <span class="na">border-top</span><span class="o">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="no">solid</span> <span class="mh">#eee</span>
+    <span class="nd">+box-shadow</span><span class="p">(</span><span class="mi">2</span><span class="kt">px</span><span class="o">,</span> <span class="nb">black</span><span class="p">)</span>
+</pre></div>
+  </section>
+</section>
+<section>
+  <section>
+    <h2>Alternativen</h2>
+    Less, <span style='font-size:70%'>Stylus</span>
+    <div class='fragment'>
+      <p>Scss</p>
+      <div class="highlight"><pre><span class="k">@import</span> <span class="s2">&quot;other.css&quot;</span><span class="p">;</span>
+<span class="nv">$mainColor</span><span class="o">:</span> <span class="mh">#0982c1</span><span class="p">;</span>
+<span class="nt">a</span> <span class="p">{</span>
+  <span class="nt">img</span> <span class="p">{</span>
+    <span class="na">border-color</span><span class="o">:</span> <span class="nv">$mainColor</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+      <p>Less</p>
+      <div class="highlight"><pre><span class="k">@import</span> <span class="s2">&quot;other.css&quot;</span><span class="p">;</span>
+<span class="k">@mainColor</span><span class="nd">:</span> <span class="nn">#0982c1</span><span class="o">;</span>
+<span class="nt">a</span> <span class="p">{</span>
+  <span class="nt">img</span> <span class="p">{</span>
+    <span class="na">border-color</span><span class="o">:</span> <span class="o">@</span><span class="n">mainColor</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+    </div>
+  </section>
+  <section>
+    <ul>
+      <li>+ leichteres Setup (js direkt im Browser)</li>
+      <li>
+        - IF/Loops schwieriger
+        <ul>
+          <li>Schleifen NUR mit Rekursion!</li>
+          <li>Statt Bedinungen, Guard-Statements</li>
+        </ul>
+      </li>
+      <li>- kein Compass</li>
+      <li>+ Twitter-Bootstrap</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Meinungen sind wie ...,</h2>
+    <ul>
+      <li>
+        <a href="http://net.tutsplus.com/tutorials/html-css-techniques/sass-vs-less-vs-stylus-a-preprocessor-shootout/">Net.tutsplus - sass vs less vs stylus a preprocessor shootout</a>
+      </li>
+      <li>
+        <a href="http://css-tricks.com/sass-vs-less/">Sass vs. LESS | CSS-Tricks</a>
+      </li>
+      <li>
+        <a href="http://hugogiraudel.com/2012/11/13/less-to-sass/">Why I switched from LESS to Sass</a>
+      </li>
+    </ul>
+  </section>
+  <section data-state='soothe'>
+    <h1>Egal welcher Preprocessor</h1>
+    <ul>
+      <li>Wesentlich wartbarere Stylesheets dank Imports, Variablen und Nestings</li>
+      <li>Programmatisch statt Copy &amp; Paste</li>
+      <li>Seit 2009 nicht mehr ohne</li>
+      <li>
+        ALLE meine Webprojekte verwenden Sass
+        <div class='small'>So  auch diese Präsentation</div>
+      </li>
+    </ul>
+  </section>
+</section>
+<section>
+  <section>
+    <h2>Ressourcen</h2>
+    <ul>
+      <li>
+        <a href="http://sassmeister.com/">http://sassmeister.com/</a>
+        <div class='small'>Online "Editor"/Compiler</div>
+      </li>
+      <li>
+        <a href="http://compass-style.org/">http://compass-style.org/</a>
+        <div class='small'>Offizielle Compass Seite</div>
+      </li>
+      <li>
+        <a href="http://sass-lang.com/">http://sass-lang.com/</a>
+        <div class='small'>Offizielle Sass Seite</div>
+      </li>
+      <li>
+        <a href="http://thesassway.com/guides">http://thesassway.com/guides</a>
+        <div class='small'>Blogs und Guides</div>
+      </li>
+      <li><a href="http://thesassway.com/beginner/getting-started-with-sass-and-compass">Getting started with Sass and Compass</a></li>
+      <li>
+        <a href="https://speakerdeck.com/imathis/sass-compass-the-future-of-stylesheets-now">Sass & Compass: The future of stylesheets now</a>
+        <div class='small'>Sehr gute Präsentation</div>
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h2>Libsass und sassc</h2>
+    <p>Rewrite in C</p>
+    <ul>
+      <li>
+        <a href="https://github.com/hcatlin/sassc">hcatlin/sassc</a>
+      </li>
+      <li>
+        <a href="https://github.com/hcatlin/libsass">hcatlin/libsass</a>
+      </li>
+      <li>It's fast, man!</li>
+    </ul>
+  </section>
+  <section data-state='white'>
+    <h1>Danke!</h1>
+    <p class='small'>
+      powered by
+      <a href="">Reveal.js</a>
+    </p>
+    <img src="http://www.gravatar.com/avatar/6edcb304a03a87ddf5c68239f7d001e4?s=200&d=identicon&r=PG" />
+    <ul>
+      <li>
+        <a href="http://www.stefanwienert.net">stefanwienert.net</a>
+        <div class='small'>Blog</div>
+      </li>
+      <li>
+        <a href="https://twitter.com/stefanwienert">@stefanwienert</a>
+        <div class='small'>Twitter</div>
+      </li>
+      <li>
+        <a href="http//www.pludoni.de/">pludoni GmbH</a>
+        <div class='small'>
+          Webentwickler bei pludoni
+          <br>
+          <a href="http://www.itsax.de">ITsax.de - IT Jobs in Dresden und Umgebung</a>
+          <br>
+          <a href="http://www.itmitte.de">ITmitte.de - IT Jobs in Leipzig, Halle, Jena</a>
+        </div>
+      </li>
+    </ul>
+  </section>
+</section>
+        </div>
+        <aside class='controls'>
+          <a class='left' href='#'>&#x25C4;</a>
+          <a class='right' href='#'>&#x25BA;</a>
+          <a class='up' href='#'>&#x25B2;</a>
+          <a class='down' href='#'>&#x25BC;</a>
+        </aside>
+        <div class='progress'>
+          <span></span>
+        </div>
+      </div>
+    </div>
+    <script src="javascripts/all.js" type="text/javascript"></script>
+  </body>
+</html>

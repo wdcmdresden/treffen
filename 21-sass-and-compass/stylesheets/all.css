@@ -1,0 +1,571 @@
+@import url(reveal.css);
+@import url(http://fonts.googleapis.com/css?family=Montserrat:700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic);
+/**
+ * Black theme for reveal.js.
+ * 
+ * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+/*********************************************
+ * GLOBAL STYLES
+ *********************************************/
+/* line 11, night.css */
+body {
+  background: #111111;
+  background-color: #111111; }
+
+/* line 16, night.css */
+.reveal {
+  font-family: "Open Sans", Times, "Times New Roman", serif;
+  font-size: 30px;
+  font-weight: 200;
+  letter-spacing: -0.02em;
+  color: #eeeeee; }
+
+/* line 24, night.css */
+::selection {
+  color: white;
+  background: #e7ad52;
+  text-shadow: none; }
+
+/*********************************************
+ * HEADERS
+ *********************************************/
+/* line 38, night.css */
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  margin: 0 0 20px 0;
+  color: #eeeeee;
+  font-family: "Montserrat", Impact, sans-serif;
+  line-height: 0.9em;
+  letter-spacing: -0.03em;
+  text-transform: none;
+  text-shadow: none; }
+
+/* line 48, night.css */
+.reveal h1 {
+  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2); }
+
+/*********************************************
+ * LINKS
+ *********************************************/
+/* line 55, night.css */
+.reveal a:not(.image) {
+  color: #e7ad52;
+  text-decoration: none;
+  -webkit-transition: color 0.15s ease;
+  -moz-transition: color 0.15s ease;
+  -ms-transition: color 0.15s ease;
+  -o-transition: color 0.15s ease;
+  transition: color 0.15s ease; }
+
+/* line 65, night.css */
+.reveal a:not(.image):hover {
+  color: #f3d7ac;
+  text-shadow: none;
+  border: none; }
+
+/* line 71, night.css */
+.reveal .roll span:after {
+  color: #fff;
+  background: #d08a1d; }
+
+/*********************************************
+ * IMAGES
+ *********************************************/
+/* line 79, night.css */
+.reveal section img {
+  margin: 15px 0px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 4px solid #eeeeee;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear; }
+
+/* line 91, night.css */
+.reveal a:hover img {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #e7ad52;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
+
+/*********************************************
+ * NAVIGATION CONTROLS
+ *********************************************/
+/* line 101, night.css */
+.reveal .controls div.navigate-left,
+.reveal .controls div.navigate-left.enabled {
+  border-right-color: #e7ad52; }
+
+/* line 106, night.css */
+.reveal .controls div.navigate-right,
+.reveal .controls div.navigate-right.enabled {
+  border-left-color: #e7ad52; }
+
+/* line 111, night.css */
+.reveal .controls div.navigate-up,
+.reveal .controls div.navigate-up.enabled {
+  border-bottom-color: #e7ad52; }
+
+/* line 116, night.css */
+.reveal .controls div.navigate-down,
+.reveal .controls div.navigate-down.enabled {
+  border-top-color: #e7ad52; }
+
+/* line 120, night.css */
+.reveal .controls div.navigate-left.enabled:hover {
+  border-right-color: #f3d7ac; }
+
+/* line 124, night.css */
+.reveal .controls div.navigate-right.enabled:hover {
+  border-left-color: #f3d7ac; }
+
+/* line 128, night.css */
+.reveal .controls div.navigate-up.enabled:hover {
+  border-bottom-color: #f3d7ac; }
+
+/* line 132, night.css */
+.reveal .controls div.navigate-down.enabled:hover {
+  border-top-color: #f3d7ac; }
+
+/*********************************************
+ * PROGRESS BAR
+ *********************************************/
+/* line 139, night.css */
+.reveal .progress {
+  background: rgba(0, 0, 0, 0.2); }
+
+/* line 143, night.css */
+.reveal .progress span {
+  background: #e7ad52;
+  -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -ms-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -o-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
+
+/* line 1, pyg/railscasts.css */
+.highlight {
+  background: #2B2B2B;
+  color: #E6E1DC; }
+
+/* line 2, pyg/railscasts.css */
+.highlight .hll {
+  background-color: #ffffcc; }
+
+/* line 3, pyg/railscasts.css */
+.highlight .c {
+  color: #BC9458;
+  font-style: italic; }
+
+/* Comment */
+/* line 4, pyg/railscasts.css */
+.highlight .err {
+  color: #E6E1DC; }
+
+/* Error */
+/* line 5, pyg/railscasts.css */
+.highlight .g {
+  color: #E6E1DC; }
+
+/* Generic */
+/* line 6, pyg/railscasts.css */
+.highlight .k {
+  color: #CC7833; }
+
+/* Keyword */
+/* line 7, pyg/railscasts.css */
+.highlight .l {
+  color: #E6E1DC; }
+
+/* Literal */
+/* line 8, pyg/railscasts.css */
+.highlight .n {
+  color: #E6E1DC; }
+
+/* Name */
+/* line 9, pyg/railscasts.css */
+.highlight .o {
+  color: #E6E1DC; }
+
+/* Operator */
+/* line 10, pyg/railscasts.css */
+.highlight .x {
+  color: #E6E1DC; }
+
+/* Other */
+/* line 11, pyg/railscasts.css */
+.highlight .p {
+  color: #E6E1DC; }
+
+/* Punctuation */
+/* line 12, pyg/railscasts.css */
+.highlight .cm {
+  color: #BC9458;
+  font-style: italic; }
+
+/* Comment.Multiline */
+/* line 13, pyg/railscasts.css */
+.highlight .cp {
+  color: #CC7833; }
+
+/* Comment.Preproc */
+/* line 14, pyg/railscasts.css */
+.highlight .c1 {
+  color: #BC9458;
+  font-style: italic; }
+
+/* Comment.Single */
+/* line 15, pyg/railscasts.css */
+.highlight .cs {
+  color: #BC9458;
+  font-style: italic; }
+
+/* Comment.Special */
+/* line 16, pyg/railscasts.css */
+.highlight .gd {
+  color: #E6E1DC;
+  background-color: #660000; }
+
+/* Generic.Deleted */
+/* line 17, pyg/railscasts.css */
+.highlight .ge {
+  color: #E6E1DC; }
+
+/* Generic.Emph */
+/* line 18, pyg/railscasts.css */
+.highlight .gr {
+  color: #FFFFFF;
+  background-color: #990000; }
+
+/* Generic.Error */
+/* line 19, pyg/railscasts.css */
+.highlight .gh {
+  color: #FFFFFF; }
+
+/* Generic.Heading */
+/* line 20, pyg/railscasts.css */
+.highlight .gi {
+  color: #E6E1DC;
+  background-color: #144212; }
+
+/* Generic.Inserted */
+/* line 21, pyg/railscasts.css */
+.highlight .go {
+  color: #E6E1DC; }
+
+/* Generic.Output */
+/* line 22, pyg/railscasts.css */
+.highlight .gp {
+  color: #E6E1DC; }
+
+/* Generic.Prompt */
+/* line 23, pyg/railscasts.css */
+.highlight .gs {
+  color: #E6E1DC; }
+
+/* Generic.Strong */
+/* line 24, pyg/railscasts.css */
+.highlight .gu {
+  color: #FFFFFF; }
+
+/* Generic.Subheading */
+/* line 25, pyg/railscasts.css */
+.highlight .gt {
+  color: #E6E1DC; }
+
+/* Generic.Traceback */
+/* line 26, pyg/railscasts.css */
+.highlight .kc {
+  color: #CC7833; }
+
+/* Keyword.Constant */
+/* line 27, pyg/railscasts.css */
+.highlight .kd {
+  color: #CC7833; }
+
+/* Keyword.Declaration */
+/* line 28, pyg/railscasts.css */
+.highlight .kn {
+  color: #CC7833; }
+
+/* Keyword.Namespace */
+/* line 29, pyg/railscasts.css */
+.highlight .kp {
+  color: #CC7833; }
+
+/* Keyword.Pseudo */
+/* line 30, pyg/railscasts.css */
+.highlight .kr {
+  color: #CC7833; }
+
+/* Keyword.Reserved */
+/* line 31, pyg/railscasts.css */
+.highlight .kt {
+  color: #DA4939; }
+
+/* Keyword.Type */
+/* line 32, pyg/railscasts.css */
+.highlight .ld {
+  color: #E6E1DC; }
+
+/* Literal.Date */
+/* line 33, pyg/railscasts.css */
+.highlight .m {
+  color: #A5C261; }
+
+/* Literal.Number */
+/* line 34, pyg/railscasts.css */
+.highlight .s {
+  color: #A5C261; }
+
+/* Literal.String */
+/* line 35, pyg/railscasts.css */
+.highlight .na {
+  color: #FFC66D; }
+
+/* Name.Attribute */
+/* line 36, pyg/railscasts.css */
+.highlight .nb {
+  color: #E6E1DC; }
+
+/* Name.Builtin */
+/* line 37, pyg/railscasts.css */
+.highlight .nc {
+  color: #E6E1DC; }
+
+/* Name.Class */
+/* line 38, pyg/railscasts.css */
+.highlight .no {
+  color: #6D9CBE; }
+
+/* Name.Constant */
+/* line 39, pyg/railscasts.css */
+.highlight .nd {
+  color: #E6E1DC; }
+
+/* Name.Decorator */
+/* line 40, pyg/railscasts.css */
+.highlight .ni {
+  color: #E6E1DC; }
+
+/* Name.Entity */
+/* line 41, pyg/railscasts.css */
+.highlight .ne {
+  color: #E6E1DC; }
+
+/* Name.Exception */
+/* line 42, pyg/railscasts.css */
+.highlight .nf {
+  color: #FFC66D; }
+
+/* Name.Function */
+/* line 43, pyg/railscasts.css */
+.highlight .nl {
+  color: #E6E1DC; }
+
+/* Name.Label */
+/* line 44, pyg/railscasts.css */
+.highlight .nn {
+  color: #E6E1DC; }
+
+/* Name.Namespace */
+/* line 45, pyg/railscasts.css */
+.highlight .nx {
+  color: #E6E1DC; }
+
+/* Name.Other */
+/* line 46, pyg/railscasts.css */
+.highlight .py {
+  color: #E6E1DC; }
+
+/* Name.Property */
+/* line 47, pyg/railscasts.css */
+.highlight .nt {
+  color: #CC7833; }
+
+/* Name.Tag */
+/* line 48, pyg/railscasts.css */
+.highlight .nv {
+  color: #D0D0FF; }
+
+/* Name.Variable */
+/* line 49, pyg/railscasts.css */
+.highlight .ow {
+  color: #E6E1DC; }
+
+/* Operator.Word */
+/* line 50, pyg/railscasts.css */
+.highlight .w {
+  color: #E6E1DC; }
+
+/* Text.Whitespace */
+/* line 51, pyg/railscasts.css */
+.highlight .mf {
+  color: #A5C261; }
+
+/* Literal.Number.Float */
+/* line 52, pyg/railscasts.css */
+.highlight .mh {
+  color: #A5C261; }
+
+/* Literal.Number.Hex */
+/* line 53, pyg/railscasts.css */
+.highlight .mi {
+  color: #A5C261; }
+
+/* Literal.Number.Integer */
+/* line 54, pyg/railscasts.css */
+.highlight .mo {
+  color: #A5C261; }
+
+/* Literal.Number.Oct */
+/* line 55, pyg/railscasts.css */
+.highlight .sb {
+  color: #A5C261; }
+
+/* Literal.String.Backtick */
+/* line 56, pyg/railscasts.css */
+.highlight .sc {
+  color: #A5C261; }
+
+/* Literal.String.Char */
+/* line 57, pyg/railscasts.css */
+.highlight .sd {
+  color: #A5C261; }
+
+/* Literal.String.Doc */
+/* line 58, pyg/railscasts.css */
+.highlight .s2 {
+  color: #A5C261; }
+
+/* Literal.String.Double */
+/* line 59, pyg/railscasts.css */
+.highlight .se {
+  color: #A5C261; }
+
+/* Literal.String.Escape */
+/* line 60, pyg/railscasts.css */
+.highlight .sh {
+  color: #A5C261; }
+
+/* Literal.String.Heredoc */
+/* line 61, pyg/railscasts.css */
+.highlight .si {
+  color: #A5C261; }
+
+/* Literal.String.Interpol */
+/* line 62, pyg/railscasts.css */
+.highlight .sx {
+  color: #A5C261; }
+
+/* Literal.String.Other */
+/* line 63, pyg/railscasts.css */
+.highlight .sr {
+  color: #A5C261; }
+
+/* Literal.String.Regex */
+/* line 64, pyg/railscasts.css */
+.highlight .s1 {
+  color: #A5C261; }
+
+/* Literal.String.Single */
+/* line 65, pyg/railscasts.css */
+.highlight .ss {
+  color: #A5C261; }
+
+/* Literal.String.Symbol */
+/* line 66, pyg/railscasts.css */
+.highlight .bp {
+  color: #E6E1DC; }
+
+/* Name.Builtin.Pseudo */
+/* line 67, pyg/railscasts.css */
+.highlight .vc {
+  color: #D0D0FF; }
+
+/* Name.Variable.Class */
+/* line 68, pyg/railscasts.css */
+.highlight .vg {
+  color: #D0D0FF; }
+
+/* Name.Variable.Global */
+/* line 69, pyg/railscasts.css */
+.highlight .vi {
+  color: #D0D0FF; }
+
+/* Name.Variable.Instance */
+/* line 70, pyg/railscasts.css */
+.highlight .il {
+  color: #A5C261; }
+
+/* Literal.Number.Integer.Long */
+/* line 14, all.css.sass */
+.highlight {
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  padding: 10px 10px;
+  overflow: auto;
+  word-wrap: break-word;
+  box-shadow: 0 0 6px rgba(90, 90, 110, 0.5);
+  margin: 10px;
+  border: 1px solid #333333;
+  box-shadow: 0 0 1px #666666 inset; }
+  /* line 23, all.css.sass */
+  .highlight pre {
+    margin: 0;
+    font-family: "Droid Sans Mono", monospace;
+    line-height: 1.3;
+    font-size: 20px;
+    white-space: pre-wrap; }
+
+/* line 29, all.css.sass */
+h1.title {
+  font-weight: bold;
+  position: absolute;
+  top: 30%;
+  left: 25%; }
+
+/* line 35, all.css.sass */
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5 {
+  font-family: "Libre Baskerville";
+  text-transform: none; }
+/* line 38, all.css.sass */
+.reveal section {
+  font-family: "Fresca", sans-serif; }
+
+/* line 42, all.css.sass */
+#intro img {
+  border: 0;
+  box-shadow: none; }
+
+/* line 45, all.css.sass */
+.small {
+  font-size: 16px;
+  margin-left: 10px;
+  color: #cccccc; }
+
+/* line 49, all.css.sass */
+.white .reveal {
+  color: #333333; }
+  /* line 51, all.css.sass */
+  .white .reveal h1, .white .reveal h2 {
+    color: black; }
+  /* line 53, all.css.sass */
+  .white .reveal .state-background {
+    background: white; }
+  /* line 55, all.css.sass */
+  .white .reveal img {
+    box-shadow: none;
+    border: none; }
+  /* line 58, all.css.sass */
+  .white .reveal a {
+    color: #d38000; }
+  /* line 60, all.css.sass */
+  .white .reveal .small {
+    color: #666666; }
