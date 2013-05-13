@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="de">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>ProcessWire – Das Wohlfühl-CMS</title>
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+<section class="first">
+	<h1><img src="lib/img/logo.png" alt="ProcessWire" class="alt"></h1>
+	<h3>Das Wohlfühl-CMS</h3>
+	<p>
+		<small><a href="http://twitter.com/isellsoap">Francesco Schwarz</a>, WDCM Dresden, 14. Mai 2013</small>
+	</p>
+</section>
+
+<section>
+	<h2>Geschichte</h2>
+	<ul>
+		<li>2003 – 2007: »Dictator CMS«</li>
+		<li>2007 – 2010: ProcessWire 1.x</li>
+		<li>seit 2010: ProcessWire 2.x (und <a href="https://github.com/ryancramerdesign/ProcessWire">open source</a>)</li>
+		<li>Hauptentwickler bis Version 2.0: <a href="http://www.ryancramer.com/">Ryan Cramer</a></li>
+		<li><a href="http://processwire.com/about/background/">Hintergrundinfos</a> + <a href="http://en.wikipedia.org/wiki/ProcessWire">Wikipedia</a></li>
+	</ul>
+</section>
+
+<section>
+	<h2>Kurzübersicht</h2>
+	<ul>
+		<li>benötigt Apache, PHP und MySQL</li>
+		<li>mehr als <strong>160 Module</strong> vorhanden</li>
+		<li>
+			<a href="http://processwire.com/about/news/introducing-processwire-2.3/">Version <strong>2.3</strong></a> im April 2013 veröffentlicht
+			<ul>
+				<li>API unterstützt alle jQuery-Traversierungsfunktionen</li>
+			</ul>
+		</li>
+		<li><a href="http://processwire.com/about/roadmap/">Roadmap</a>
+			<ul>
+				<li><strong>2.4</strong> im Sommer 2013 (Umstieg auf PHP 5.3)</li>
+				<li><strong>2.5</strong> im Winter 2013/14</li>
+			</ul>
+		</li>
+	</ul>
+</section>
+
+<section>
+	<h2>Kernfeatures</h2>
+	<p class="fragment">(= Wohlfühlfaktoren)</p>
+</section>
+
+<section>
+	<h3>Volle Freiheit</h3>
+	<a href="http://www.flickr.com/photos/kliefi/2303269060/"><img src="lib/img/freedom.jpg" alt="Flying seagull"></a>
+</section>
+<section>
+	<ul>
+		<li>
+			so gut wie keine Vorgaben
+			<ul>
+				<li>Templates haben keine Standard-»Pflichtfelder«</li>
+				<li>Template-Entwicklung auf Dateiebene je nach Präferenz wählbar (»WordPress-Style«, MVC, …)</li>
+			</ul>
+		</li>
+		<li>
+			ausgeklügeltes Template-Management
+			<ul>
+				<li>Templatefelder können individuell angeordnet, mit Template-spezifischen Hilfstexten versehen und auf verschiedene Tabs aufgeteilt werden</li>
+			</ul>
+
+		</li>
+		<li>arbeitet und funktioniert, wie man es mag</li>
+		<li>volle Kontrolle über den Output</li>
+	</ul>
+</section>
+
+<section>
+	<h3>Mächtige API + Selektor-Engine</h3>
+	<img src="lib/img/api.jpg" alt="Screenshot of some PHP code">
+</section>
+<section>
+	<ul>
+		<li>
+			»API zum Verlieben«™
+			<ul>
+				<li>lässt sich auch einfach in anderen PHP-Apps oder Shell-Skripten <a href="http://processwire.com/api/include/">nutzen</a></li>
+			</ul>
+		</li>
+		<li>jQuery für PHP (= kinderleicht)</li>
+		<li>schnell & unkompliziert entwickeln</li>
+		<li>ausdrucksstark und mächtig</li>
+		<li>es macht Spaß damit zu arbeiten</li>
+	</ul>
+</section>
+
+<section>
+	<h3>Modulare Plugin-Architektur</h3>
+	<a href="http://www.flickr.com/photos/jugbo/366748612/"><img src="lib/img/modular.jpg" alt="A puzzle"></a>
+</section>
+<section>
+	<ul>
+		<li>CMS selbst ist modular aufgebaut
+			<ul>
+				<li>besteht lediglich aus vorinstallierten Modulen</li>
+			</ul>
+		</li>
+		<li>nahezu jede Komponente und Aktion ist durch Hooks ansprechbar (<a href="http://processwire.com/api/hooks/">Cheatsheet aller Hooks</a>)</li>
+		<li>ProcessWire ist darauf ausgelegt sich einfach erweitern zu lassen</li>
+	</ul>
+</section>
+
+<section>
+	<h3>»Seiten« zentrales Konzept</h3>
+	<a href="http://www.flickr.com/photos/horiavarlan/4268896468/"><img src="lib/img/pages.jpg" alt="A puzzle"></a>
+</section>
+<section>
+	<ul>
+		<li>
+			nicht nur für typische Inhaltsseiten verwendet
+			<ul>
+				<li>z.B. Nutzer und Nutzerrollen, Admin-Seiten, Taxonomien, etc. sind auch »Seiten«</li>
+			</ul>
+		</li>
+		<li>
+			versteckte Seiten dienen als Datenbankeingabemasken
+			<ul>
+				<li>Pflegeoberfläche für beliebige Inhalte → \o/</li>
+			</ul>
+		</li>
+		<li>schöne Schlussfolgerung:
+			<ul>
+				<li>wenn man Seitenkonzept verstanden hat, hat man ProcessWire verstanden</li>
+			</ul>
+		</li>
+	</ul>
+</section>
+
+<section>
+	<h3>Performance und Skalierbarkeit</h3>
+	<a href="http://www.flickr.com/photos/guille/81452528/"><img src="lib/img/speed.jpg" alt="Strike fighter breaks sound barrier"></a>
+</section>
+<section>
+	<ul>
+		<li>
+			Backend ist out-of-the-box pfeilschnell
+			<ul>
+				<li>wers noch schneller möchte: <a href="http://store.di.net/collections/software/products/procache">ProCache</a></li>
+			</ul>
+		</li>
+		<li>mehrere 100k Seiten überhaupt kein Problem</li>
+	</ul>
+</section>
+
+<section>
+	<h3>Community</h3>
+	<a href="http://www.flickr.com/photos/danielygo/7357503268/"><img src="lib/img/smile.jpg" alt="A smiley face"></a>
+</section>
+<section>
+	<ul>
+		<li><a href="http://processwire.com/talk/">Forum</a> ist zentrale Anlaufstelle</li>
+		<li>kleine (aber feine) Community</li>
+		<li>hilfsbereit, freundlich & kompetent</li>
+		<li><a href="http://processwire.com/talk/user/2-ryan/">Hauptentwickler</a> klinkt sich in nahezu jeden Thread ein</li>
+		<li>nach maximal einigen Stunden ist das Problem gelöst</li>
+		<li>Verbesserungsvorschläge werden gehört und ernst genommen</li>
+	</ul>
+</section>
+
+<section>
+	<h3>Und, und, und</h3>
+	<ul>
+		<li>integrierte <a href="http://processwire.com/api/user-access/">Nutzverwaltung</a> mit rollenbasierten Rechten</li>
+		<li>gute Möglichkeiten für <a href="http://processwire.com/api/multi-language-support/">Mehrsprachigkeit</a></li>
+		<li>unzählige <a href="http://processwire.com/api/fieldtypes/">Feldtypen</a> (u.a. Datetime, Email, File, Image, <strong>Page</strong>, Password, <strong>Repeater</strong>, Text, Textarea, URL, …)</li>
+		<li>Templates und Felder sind kategorisierbar</li>
+		<li>Installationsprofile (z.B. <a href="http://modules.processwire.com/modules/blog-profile/">voll funktionsfähiges Blog</a>)</li>
+		<li>
+			unbegrenzte Anwendungsfälle
+			<ul>
+				<li>Micro Sites, Blogs, Web-App, soziales Netzwerk, Portale, …</li>
+			</ul>
+		</li>
+	</ul>
+</section>
+
+<section>
+	<h2>Nachteile</h2>
+	<ul>
+		<li>
+			vernünftiger Media-Manager fehlt noch
+			<ul>
+				<li><a href="http://processwire.com/talk/topic/3219-images-manager-alpha/">Images Manager</a> existiert, allerdings noch alpha</li>
+			</ul>
+		</li>
+		<li>Default-Admin-Theme könnte nutzerfreundlicher sein
+			<ul>
+				<li>angepeilt für Version 2.4/2.5</li>
+				<li>Auswahl an <a href="http://modules.processwire.com/categories/admin-theme/">vielen anderen Admin-Themes</a></li>
+			</ul>
+		</li>
+	</ul>
+</section>
+
+<section>
+	<h2>Fazit</h2>
+	<ul>
+		<li>junges CMS</li>
+		<li>einfach & mächtig</li>
+		<li>vielversprechende Roadmap</li>
+		<li><strong>mit Spaß arbeiten</strong></li>
+	</ul>
+</section>
+
+<section>
+	<h2>Links</h2>
+	<ul>
+		<li><a href="http://processwire.com/">offizielle Website</a>, gibt’s auch (stückhaft) auf <a href="http://de.processwire.com/">deutsch</a></li>
+		<li><a href="http://processwire.com/api/">API</a> + <a href="http://processwire.com/api/cheatsheet/">Cheatsheet</a></li>
+		<li><a href="http://processwire.com/api/hooks/">Hooks-Cheatsheet</a> (Captain Hook)</li>
+		<li><a href="http://processwire.com/talk/">Forum</a>, <a href="http://wiki.processwire.com/index.php/Main_Page">Wiki</a>, <a href="http://processwire.com/videos/">Videos</a> & <a href="https://github.com/ryancramerdesign/ProcessWire">GitHub</a></li>
+		<li><a href="http://www.getsymphony.com/discuss/thread/79645/">»Symphony or ProcessWire?«</a></li>
+		<li><a href="http://www.globi.ca/blog/wordpress_vs_processwire/">»WordPress vs ProcessWire«</a></li>
+		<li><a href="http://processwire.com/talk/topic/1307-comparison-of-pw-and-codeigniter/">»Comparison of PW and CodeIgniter«</a></li>
+		<li><a href="http://www.mademyday.de/why-i-chose-processwire-over-modx.html">»Why I chose ProcessWire over MODX«</a></li>
+		<li><a href="http://yellowled.de/archiv/37/I-ProcessWire.html">»I ♥ ProcessWire«</a></li>
+		<li><a href="http://www.tyssendesign.com.au/articles/cms/cms-review-processwire/">»CMS Review: Processwire«</a></li>
+		<li><a href="http://webkrauts.de/artikel/2012/processwire">Webkrautsartikel zu ProcessWire</a></li>
+	</ul>
+</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				rollingLinks: false,
+				transition: 'none',
+
+				theme: 'sky', // available themes are in /css/theme
+				// default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
