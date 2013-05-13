@@ -2,10 +2,13 @@
 
 Präsentationen vergangener Treffen.
 
+## #24: Knockout und ProcessWire
+
+* ProcessWire: [Vortragsfolien](http://wdcmdresden.github.com/treffen/24-knockout-und-processwire/processwire/)
+
 ## #21: Sass und Compass
 
-* [http://wdcmdresden.github.com/treffen/21-sass-and-compass](http://wdcmdresden.github.com/treffen/21-sass-and-compass)
-
+* [Vortragsfolien](http://wdcmdresden.github.com/treffen/21-sass-and-compass)
 
 ## #20: CMS-Showdown
 
@@ -16,8 +19,8 @@ Präsentationen vergangener Treffen.
 
 ## #18: Feeds
 
-* [http://wdcmdresden.github.com/treffen/18-feeds](http://wdcmdresden.github.com/treffen/18-feeds)
+* [Vortragsfolien](http://wdcmdresden.github.com/treffen/18-feeds)
 
 ## #17: CoffeeScript
 
-* [http://wdcmdresden.github.com/treffen/17-coffeescript/](http://wdcmdresden.github.com/treffen/17-coffeescript/)
+* [Vortragsfolien](http://wdcmdresden.github.com/treffen/17-coffeescript/)
