@@ -4,6 +4,7 @@ Präsentationen vergangener Treffen.
 
 ## #24: Knockout und ProcessWire
 
+* Knockout: [Vortragsfolien](https://github.com/hoeck/knockout-slides)
 * ProcessWire: [Vortragsfolien](http://wdcmdresden.github.com/treffen/24-knockout-und-processwire/processwire/)
 
 ## #21: Sass und Compass
